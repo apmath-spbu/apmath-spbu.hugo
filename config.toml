@@ -5,7 +5,6 @@ defaultContentLanguage = "ru"
 title = "Материалы курсов на кафедре Технологии Программирования. ПМ-ПУ"
 theme = "hugo-theme-learn"
 disqusShortname = "username" # delete this to disable disqus comments
-googleAnalytics = ""
 sectionPagesMenu = "main"
 
 [params]
@@ -18,7 +17,8 @@ sectionPagesMenu = "main"
   disableMermaid = false
   customMermaidURL = "https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"
   titleSeparator = "::"
-  themeVariant = "darkgreen"
+  themeVariant = "green"
+  
 
 # Social icons to be shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of the icon in Font Awesome.
