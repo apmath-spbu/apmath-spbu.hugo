@@ -1,6 +1,6 @@
 ---
 title: "Жизненный цикл ПО"
-weight: 1
+weight: 2
 draft: false
 ---
 
