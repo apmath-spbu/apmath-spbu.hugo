@@ -12,6 +12,6 @@ draft: false
 
 [Const]({{< ref "/courses/basics/lecture3/const" >}})
 
-В рамаках данной лекции предполагается решение **N** задач на HackerRank. (XX points)
+В рамаках данной лекции предполагается решение **4** задачи на HackerRank. (45 points)
 
 ---
