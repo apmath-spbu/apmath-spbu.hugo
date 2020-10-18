@@ -20,6 +20,6 @@ draft: false
 
 [Макрсы Ввод-вывод]({{< ref "/courses/basics/lecture1/part8" >}})
 
-В рамаках данной лекции предполагается решение **6** задач на [HackerRank](https://www.hackerrank.com/b04-20-1sem)
+В рамаках данной лекции предполагается решение **6** задач на HackerRank. (45 points)
 
 ---
