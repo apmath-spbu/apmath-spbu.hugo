@@ -13,6 +13,12 @@ draft: false
 
 [Лекция 1. Введение в программирование]({{< ref "/courses/basics/lecture1" >}})
 
+[Лекция 2. Указатели и массивы]({{< ref "/courses/basics/lecture2" >}})
+
+[Лекция 3. Ссылки и динамическая память]({{< ref "/courses/basics/lecture3" >}})
+
+[Лекция 4. Введение в ООП. Инкапсуляция. Струртура.]({{< ref "/courses/basics/lecture4" >}})
+
 [IDE для С++]({{< ref "/courses/basics/ide" >}})
 
 ---
