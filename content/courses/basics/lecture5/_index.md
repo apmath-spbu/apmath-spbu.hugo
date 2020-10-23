@@ -4,20 +4,20 @@ weight: 1
 draft: false
 ---
 
+[Модификаторы доступа]({{< ref "/courses/basics/lecture5/accessModifier" >}})
 
-Модификаторы доступа
-Класс
-Полиморфизм
-Наследование
-Спецификаторы доступа
-Виртуальные функции
-Чистые виртуальные функции
-Абстрактный класс
-Финальные методы/классы
-Множественное наследование
-Виртуальный класс
-Динамическая идентификация типов
+[Полиморфизм]({{< ref "/courses/basics/lecture5/polymorphism" >}})
 
-В рамаках данной лекции предполагается решение **5** задачи на HackerRank. (55 points)
+[Наследование]({{< ref "/courses/basics/lecture5/inheritance" >}})
+
+[Виртуальные функции]({{< ref "/courses/basics/lecture5/virtualFunctions" >}})
+
+[Финальные методы/классы]({{< ref "/courses/basics/lecture5/final" >}})
+
+[Множественное наследование]({{< ref "/courses/basics/lecture5/multipleinheritance" >}})
+
+[Динамическая идентификация типов]({{< ref "/courses/basics/lecture5/dynamiccast" >}})
+
+В рамаках данной лекции предполагается решение **7** задач на HackerRank. (165 points)
 
 ---
