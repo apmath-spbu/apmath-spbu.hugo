@@ -11,4 +11,5 @@ draft: false
 [Жизненный цикл ПО]({{< ref "/courses/methodology/sdlc" >}})
 
 [Модели разработки ПО]({{< ref "/courses/methodology/sdm" >}})
+
 ---
