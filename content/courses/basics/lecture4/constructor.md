@@ -1,5 +1,5 @@
 ---
-title: "Констурктор"
+title: "Конструктор"
 weight: 5
 draft: false
 ---
