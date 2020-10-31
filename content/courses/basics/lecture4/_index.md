@@ -15,6 +15,6 @@ draft: false
 
 [constructor]({{< ref "/courses/basics/lecture4/constructor" >}})
 
-В рамаках данной лекции предполагается решение **5** задачи на HackerRank. (55 points)
+В рамаках данной лекции предполагается решение **5** задач на HackerRank. (55 points)
 
 ---
