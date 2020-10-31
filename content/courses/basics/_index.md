@@ -19,6 +19,12 @@ draft: false
 
 [Лекция 4. Введение в ООП. Инкапсуляция. Струртура.]({{< ref "/courses/basics/lecture4" >}})
 
+[Лекция 5. Полиморфизм. Наследование. Виратульные функции. Множественное наследование.]({{< ref "/courses/basics/lecture5 >}})
+
+Дополнительно:
+
 [IDE для С++]({{< ref "/courses/basics/ide" >}})
+
+[Git]({{< ref "/courses/methodology/git" >}})
 
 ---
