@@ -12,6 +12,8 @@ draft: false
 
 [Модели разработки ПО]({{< ref "/courses/methodology/sdm" >}})
 
+[SCRUM]({{< ref "/courses/methodology/scrum" >}})
+
 [Git]({{< ref "/courses/methodology/git" >}})
 
 Лабораторные работы:
