@@ -14,6 +14,9 @@ draft: false
 
 [Git]({{< ref "/courses/methodology/git" >}})
 
+Лабораторные работы:
+* [Лабораторная работа №1]({{< ref "/courses/methodology/labs/lab1" >}})
+
 Литература:
 * Agile Software Development // Alistair Cockburn, Addison-Wesley, 2001.
 * Agile Project Management with Scrum // Ken Schwaber, Microsoft Press, 2004.

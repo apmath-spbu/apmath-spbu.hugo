@@ -1,6 +1,6 @@
 ---
-title: "Домание задания."
+title: "Домашние задания."
 weight: 7
-draft: true
+draft: false
 ---
 
