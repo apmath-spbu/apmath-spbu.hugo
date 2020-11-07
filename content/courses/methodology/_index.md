@@ -20,5 +20,4 @@ draft: true
 * Extreme Programming Explained : Embrace Change // Kent Beck, Cynthia Andres, Addi-son-Wesley, 2004
 * Функциональное программирование. // Филд А., Харрисон П., М.: Мир, 1993
 
-
 ---

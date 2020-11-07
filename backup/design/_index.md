@@ -1,7 +1,7 @@
 ---
 title: "Проектирование информационных систем"
 weight: 7
-draft: false
+draft: true
 ---
 
 [Архитектура]({{< ref "/courses/methodology/design/00-architecture" >}})
