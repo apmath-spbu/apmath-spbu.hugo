@@ -25,6 +25,6 @@ draft: false
 
 [IDE для С++]({{< ref "/courses/basics/ide" >}})
 
-[Git]({{ ref "/courses/methodology/git" }})
+[Git]({{< ref "/courses/methodology/git" >}})
 
 ---

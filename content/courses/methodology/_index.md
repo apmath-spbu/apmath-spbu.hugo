@@ -1,7 +1,7 @@
 ---
 title: "Совеременные методологии разработки программного обеспечения."
-weight: 2
-draft: true
+weight: 1
+draft: false
 ---
 
 [Программа](http://www.apmath.spbu.ru/ru/education/courses/common/kuralenok-smrpo.html)
