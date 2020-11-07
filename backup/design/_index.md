@@ -4,23 +4,23 @@ weight: 7
 draft: true
 ---
 
-[Архитектура]({{< ref "/courses/methodology/design/00-architecture" >}})
+[Архитектура]({{< ref "/methodology/design/00-architecture" >}})
 
-[Производительность]({{< ref "/courses/methodology/design/01-performance" >}})
+[Производительность]({{< ref "/methodology/design/01-performance" >}})
 
-['Расслоение' системы]({{< ref "/courses/methodology/design/02-layering" >}})
+['Расслоение' системы]({{< ref "/methodology/design/02-layering" >}})
 
-[Развитие модели слоев в корпоративных программных приложениях]({{< ref "/courses/methodology/design/03-model-layer-evolution" >}})
+[Развитие модели слоев в корпоративных программных приложениях]({{< ref "/methodology/design/03-model-layer-evolution" >}})
 
-[Три основных слоя]({{< ref "/courses/methodology/design/04-three-main-layers" >}})
+[Три основных слоя]({{< ref "/methodology/design/04-three-main-layers" >}})
 
-[Где должны функционировать слои]({{< ref "/courses/methodology/design/05-where-deploy-layers" >}})
+[Где должны функционировать слои]({{< ref "/methodology/design/05-where-deploy-layers" >}})
 
-[Организация бизнес-логики]({{< ref "/courses/methodology/design/06-business-logic" >}})
+[Организация бизнес-логики]({{< ref "/methodology/design/06-business-logic" >}})
 
-[Уровень служб]({{< ref "/courses/methodology/design/07-service-layer" >}})
+[Уровень служб]({{< ref "/methodology/design/07-service-layer" >}})
 
-[Источник данных]({{< ref "/courses/methodology/design/08-data-source" >}})
+[Источник данных]({{< ref "/methodology/design/08-data-source" >}})
 
 
 Упомянутые решения:

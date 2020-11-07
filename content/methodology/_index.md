@@ -6,18 +6,18 @@ draft: false
 
 [Программа](http://www.apmath.spbu.ru/ru/education/courses/common/kuralenok-smrpo.html)
 
-[История]({{< ref "/courses/methodology/history" >}})
+[История]({{< ref "/methodology/history" >}})
 
-[Жизненный цикл ПО]({{< ref "/courses/methodology/sdlc" >}})
+[Жизненный цикл ПО]({{< ref "/methodology/sdlc" >}})
 
-[Модели разработки ПО]({{< ref "/courses/methodology/sdm" >}})
+[Модели разработки ПО]({{< ref "/methodology/sdm" >}})
 
-[SCRUM]({{< ref "/courses/methodology/scrum" >}})
+[SCRUM]({{< ref "/methodology/scrum" >}})
 
-[Git]({{< ref "/courses/methodology/git" >}})
+[Git]({{< ref "/methodology/git" >}})
 
 Лабораторные работы:
-* [Лабораторная работа №1]({{< ref "/courses/methodology/labs/lab1" >}})
+* [Лабораторная работа №1]({{< ref "/methodology/labs/lab1" >}})
 
 Литература:
 * Agile Software Development // Alistair Cockburn, Addison-Wesley, 2001.
