@@ -21,3 +21,20 @@ draft: false
 [Уровень служб]({{< ref "/courses/methodology/design/07-service-layer" >}})
 
 [Источник данных]({{< ref "/courses/methodology/design/08-data-source" >}})
+
+
+Упомянутые решения:
+* Domain Model
+* Transaction Script
+* Domain Model
+* Table Module
+* Row Data Gateway
+* Record Set
+* Table Data Gateway
+* Data Mapper
+* Service
+* Model-View-Controller
+* Application Controller
+* Unit of Work
+* Identity Map
+* Lazy Load
