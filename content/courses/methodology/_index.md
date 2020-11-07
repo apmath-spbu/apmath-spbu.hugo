@@ -12,7 +12,7 @@ draft: true
 
 [Модели разработки ПО]({{< ref "/courses/methodology/sdm" >}})
 
-[GIT]({{< ref "/courses/methodology/git" >}})
+[Git]({{< ref "/courses/methodology/git" >}})
 
 Литература:
 * Agile Software Development // Alistair Cockburn, Addison-Wesley, 2001.
