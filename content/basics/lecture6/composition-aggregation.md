@@ -1,5 +1,5 @@
 ---
-title: "Наследование/Композиция/Аггрегация"
+title: "Наследование. Композиция. Агрегация"
 weight: 1
 draft: false
 ---
@@ -99,7 +99,7 @@ public:
     }
 };
 ```
-* Аггергация (Aggregation)
+* Агергация (Aggregation)
 ```cpp
 class Car {
     Engine* _engine;
