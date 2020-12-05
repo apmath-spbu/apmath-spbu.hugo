@@ -81,8 +81,8 @@ int main() {
 
 Любую анонимную лямбда-функцию можно сделать именной:
 ```cpp
-auto isEven = [](int i) { return i % 2 == 1; };
-copy_if(v.begin(), v.end(), std::back_inserter(odd), isEven);
+auto isOdd = [](int i) { return i % 2 == 1; };
+copy_if(v.begin(), v.end(), std::back_inserter(odd), isOdd);
 ```
 
 Также с помощью лямбда-функции можно менять значение на месте (in-place) как показано в примере ниже:
