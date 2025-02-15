@@ -2,23 +2,66 @@ baseURL = "https://apmath-spbu.github.io/"
 languageCode = "ru-ru"
 defaultContentLanguage = "ru"
 
-title = "Материалы курсов на кафедре Технологии Программирования. ПМ-ПУ"
-theme = "hugo-theme-learn"
+title = "Краткий курс по основам программирования"
+# theme = "hugo-theme-learn"
+theme = "hugo-theme-relearn"
 disqusShortname = "username" # delete this to disable disqus comments
 sectionPagesMenu = "main"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
+
 [params]
   #editURL = "https://apmath-spbu.github.io/"
-  description = "Материалы курсов на кафедре Технологии Программирования. ПМ-ПУ"
-  author = "Alexander Ulanov"
-  showVisitedLinks = true
+  # description = "Материалы курсов на кафедре Технологии Программирования. ПМ-ПУ"
+  # author = "Alexander Ulanov"
+  showVisitedLinks = false
   disableBreadcrumb = false
   disableNextPrev = false
-  disableMermaid = false
-  customMermaidURL = "https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"
+  # disableMermaid = false
+  # customMermaidURL = "https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"
   titleSeparator = "::"
   themeVariant = "green"
-  
+  math = true
+  # enableEmoji = true
+  [[params.boxStyle]]
+    color = 'blue'
+    i18n = ''
+    icon = 'rainbow'
+    identifier = 'def'
+    title = 'Определение'
+  [[params.boxStyle]]
+    color = 'green'
+    i18n = ''
+    icon = 'shapes'
+    identifier = 'theorem'
+    title = 'Теорема'
+  [[params.boxStyle]]
+    color = 'purple'
+    i18n = ''
+    icon = 'horse'
+    identifier = 'lemma'
+    title = 'Теорема'
+  [[params.boxStyle]]
+    color = 'gray'
+    i18n = ''
+    icon = 'lock-open'
+    identifier = 'prove'
+    title = 'Доказательство'
+  [[params.boxStyle]]
+    color = 'gray'
+    i18n = ''
+    icon = 'chart-gantt'
+    identifier = 'props'
+    title = 'Свойства'
 
 # Social icons to be shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of the icon in Font Awesome.
