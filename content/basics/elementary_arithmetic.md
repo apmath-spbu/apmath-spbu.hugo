@@ -163,3 +163,31 @@ multiply(a, b): # a и b - двоичные записи чисел
 На практике, дойдя в рекурсии до $16(32)$-битных чисел, уже стоит воспользоваться стандартной операцией умножения.
 
 Существуют и более быстрые методы умножения чисел (например, метод, основанный на быстром преобразовании Фурье), но о них мы поговорим позже.
+
+#### Пример
+Рассмотрим произведение $1234 * 4321$.
+
+Задача делится на 3 подзадачи:
+1. $a_{l} b_{l} = 12 \cdot 43$
+2. $a_{r} b_{r} = 34 \cdot 21$
+3. $e = \left(a_{l}+b_{l}\right) \cdot\left(a_{r}+b_{r}\right)-a_{l} b_{l}-a_{r} b_{r} = \left(12 + 34\right) \cdot \left(43 + 21\right) - a_{l} b_{l} - a_{r} b_{r}$
+
+Первая подзадача ($a_{l} b_{l} = 12 \cdot 43$) в свою очередь также резделяется на 3 подпроблемы:
+- $a_{l}^\prime b_{l}^\prime = 1 \cdot 4 = 4$
+- $a_{r}^\prime b_{r}^\prime = 2 \cdot 3 = 6$
+- $\left(a_{l}^\prime+b_{l}^\prime\right) \cdot\left(a_{r}^\prime+b_{r}^\prime\right)-a_{l}^\prime b_{l}^\prime-a_{r} b_{r}^\prime = \left(1 + 2\right) \cdot \left(4 + 3\right) - 4 - 6 = 11$
+- Ответ: $4 \cdot 10^2 + 11 \cdot 10 + 6 = 516$
+
+Вторая подзадача ($a_{r} b_{r} = 34 \cdot 21$):
+- $a_{l}^{\prime\prime} b_{l}^{\prime\prime} = 3 \cdot 2 = 6$
+- $a_{r}^{\prime\prime} b_{r}^{\prime\prime} = 4 \cdot 1 = 4$
+- $\left(a_{l}^{\prime\prime}+b_{l}^{\prime\prime}\right) \cdot\left(a_{r}^{\prime\prime}+b_{r}^{\prime\prime}\right)-a_{l}^{\prime\prime} b_{l}^{\prime\prime}-a_{r} b_{r}^{\prime\prime} = \left(3 + 4\right) \cdot \left(2 + 1\right) - 6 - 4 = 11$
+- Ответ: $6 \cdot 10^2 + 11 \cdot 10 + 4 = 714$
+
+Третья подзадача ($e = 46 \cdot 64 - 516 - 714$). Аналогично вычисляем $46 \cdot 64$:
+- $4 \cdot 6 = 24$
+- $6 \cdot 4 = 24$
+- $\left(4 + 6 \right) \cdot (6 + 4) - 24 - 24 = 52$
+- Ответ: $24 \cdot 10^2 + 52 \cdot 10 + 24 - 516 - 714 = 1714$
+
+Финальный ответ: $1234 \cdot 4321 = 516 \cdot 10^4 + 1714 \cdot 10^2 + 714 = 5,332,114$
