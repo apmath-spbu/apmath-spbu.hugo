@@ -70,7 +70,7 @@ multiply(a, b): # a и b - двоичные записи чисел
 
 ### 2.3 Деление
 
-Пусть теперь мы хотим поделить $a$ на $b$, то есть найти такие $q, r$, что $a=q b+r$ и $0 \leqslant r<b$. Здесь работает похожая идея: обозначим за $q^{\prime}, r^{\prime}$ результат деления $\left\lfloor\frac{a}{2}\right\rfloor$ на $b$, тогда:
+Пусть теперь мы хотим поделить $a$ на $b$, то есть найти такие $q, r$, что $a=q b+r$ и $0 \leqslant r < b$. Здесь работает похожая идея: обозначим за $q^{\prime}, r^{\prime}$ результат деления $\left\lfloor\frac{a}{2}\right\rfloor$ на $b$, тогда:
 
 $$
 (q, r)= \begin{cases}\left(2 \cdot q^{\prime}+\left\lfloor\frac{2 \cdot r^{\prime}}{b}\right\rfloor, 2 \cdot r^{\prime}-\left\lfloor\frac{2 \cdot r^{\prime}}{b}\right\rfloor \cdot b\right), & \text { если } a \text { чётно, } \\ \left(2 \cdot q^{\prime}+\left\lfloor\frac{2 \cdot r^{\prime}+1}{b}\right\rfloor, 2 \cdot r^{\prime}+1-\left\lfloor\frac{2 \cdot r^{\prime}+1}{b}\right\rfloor \cdot b\right), & \text { иначе. }\end{cases}
