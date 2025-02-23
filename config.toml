@@ -9,6 +9,8 @@ disqusShortname = "username" # delete this to disable disqus comments
 sectionPagesMenu = "main"
 
 [markup]
+  [markup.highlight]
+    lineNos = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       # unsafe = true
