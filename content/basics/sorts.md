@@ -19,6 +19,8 @@ for i = 0..(n - 1):
             minPos = j
     swap(a[i], a[minPos])
 ```
+&nbsp;
+{{< video2 "https://github.com/apmath-spbu/manim-sorts/raw/refs/heads/main/SelectionSort.mp4" "my-5">}}
 
 ### Сортировка вставками
 
