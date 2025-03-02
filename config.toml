@@ -51,7 +51,7 @@ sectionPagesMenu = "main"
     i18n = ''
     icon = 'horse'
     identifier = 'lemma'
-    title = 'Теорема'
+    title = 'Лемма'
   [[params.boxStyle]]
     color = 'gray'
     i18n = ''
