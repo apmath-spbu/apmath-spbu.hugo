@@ -76,7 +76,7 @@ merge(a, l, m, r): # сливает два отсортированных отр
             a[l + i] = buf[i]
 ```
 
-Время работы сортировки слиянием можно оценить с помощью рекуррентного соотношения $T(n)=2 \cdot T\left(\frac{n}{2}\right)+\Theta(n)$. По [основной теореме о рекуррентных соотношениях]({{< relref "basics/recurrence_relation" >}}) получаем $T(n)=\Theta(n \log n)$.
+Время работы сортировки слиянием можно оценить с помощью рекуррентного соотношения $T(n)=2 \cdot T\left(\frac{n}{2}\right)+\Theta(n)$. По [основной теореме о рекуррентных соотношениях]({{% relref "basics/recurrence_relation" %}}) получаем $T(n)=\Theta(n \log n)$.
 
 Сортировка слиянием стабильна (поскольку функция merge не меняет относительный порядок равных элементов).
 
@@ -144,7 +144,7 @@ quickSort(a, l, r): # coртирует a[l, r]
 
 В худшем случае массив каждый раз будет делиться очень неравномерно, и почти все элементы будут попадать в одну из частей. Время работы в худшем случае можно оценить с помощью рекуррентного соотношения $T(n)=T(n-1)+\Theta(n)$, раскрыв которое, получаем $T(n)=\sum_{i=1}^{n} \Theta(i)=\Theta\left(n^{2}\right)$.
 
-В лучшем же случае массив каждый раз будет делиться на две примерно равные части. Получаем рекуррентное соотношение $T(n)=2 \cdot T\left(\frac{n}{2}\right)+\Theta(n)$, тогда по [основной теореме о рекуррентных соотношениях]({{< relref "basics/recurrence_relation" >}}) получаем $T(n)=\Theta(n \log n)$.
+В лучшем же случае массив каждый раз будет делиться на две примерно равные части. Получаем рекуррентное соотношение $T(n)=2 \cdot T\left(\frac{n}{2}\right)+\Theta(n)$, тогда по [основной теореме о рекуррентных соотношениях]({{% relref "basics/recurrence_relation" %}}) получаем $T(n)=\Theta(n \log n)$.
 
 Оказывается, время работы алгоритма в среднем намного ближе к лучшему случаю, чем к худшему. Для того, чтобы это доказать, нам понадобится терминология из теории вероятностей.
 {{% notice style="def" %}}
@@ -153,6 +153,7 @@ quickSort(a, l, r): # coртирует a[l, r]
 $$
 \mathbb{E} X=\sum_{i=1}^{n} p_{i} x_{i} .
 $$
+
 {{% /notice %}}
 
 >[!theorem]
@@ -181,7 +182,7 @@ $$
 $$
 \begin{aligned}
 \mathbb{E} T(n)= & \sum_{1 \leqslant i < j \leqslant n} \sum_{A \in \Gamma} p(A) \chi(A, i, j)=\sum_{i=1}^{n-1} \sum_{j=i+1}^{n} \frac{2}{j-i+1}\xlongequal{\left(k=j-i\right)} \\
-& =\sum_{i=1}^{n-1} \sum_{k=1}^{n-i} \frac{2}{k+1}<2 n \sum_{k=1}^{n} \frac{1}{k}=O(n \log n)
+& =\sum_{i=1}^{n-1} \sum_{k=1}^{n-i} \frac{2}{k+1} < 2 n \sum_{k=1}^{n} \frac{1}{k}=O(n \log n)
 \end{aligned}
 $$
 
@@ -194,6 +195,7 @@ $$
 \frac{1}{1}+\left(\frac{1}{2}+\frac{1}{2}\right)+\left(\frac{1}{4}+\frac{1}{4}+\frac{1}{4}+\frac{1}{4}\right)+\cdots \leqslant\left\lfloor\log _{2} n\right\rfloor+1 .
 \end{gathered}
 $$
+
 {{% /notice %}}
 
 
@@ -243,6 +245,7 @@ $$
 $$
 \sum_{j} O\left(\left(\frac{3}{4}\right)^{j} n\right) \cdot 2=O\left(n \cdot \sum_{j}\left(\frac{3}{4}\right)^{j}\right)=O\left(n \cdot \frac{1}{1-3 / 4}\right)=O(n)
 $$
+
 {{% /notice %}}
 
 В C++ есть встроенная реализация этого алгоритма - [std::nth_element](https://en.cppreference.com/w/cpp/algorithm/nth_element).
@@ -265,6 +268,7 @@ $$
 $$
 k \geqslant \log (n!) \geqslant \log \left(\left(\frac{n}{2}\right)^{n / 2}\right)=\frac{n}{2} \log \frac{n}{2}=\Omega(n \log n)
 $$
+
 {{% /notice %}}
 
 Тем не менее, если обладать какой-то дополнительной информацией о свойствах сортируемых объектов, иногда можно воспользоваться этими свойствами, чтобы отсортировать объекты быстрее, чем за $\Theta(n \log n)$.
