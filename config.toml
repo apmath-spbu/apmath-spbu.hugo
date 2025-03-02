@@ -70,6 +70,12 @@ sectionPagesMenu = "main"
     icon = 'chart-gantt'
     identifier = 'ex'
     title = 'Пример'
+  [[params.boxStyle]]
+    color = 'green'
+    i18n = ''
+    icon = 'chart-gantt'
+    identifier = 'corollar'
+    title = 'Следствие'
 
 # Social icons to be shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of the icon in Font Awesome.
