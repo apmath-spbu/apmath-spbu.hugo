@@ -22,6 +22,11 @@ sectionPagesMenu = "main"
           inline = [['\(', '\)'], ['$', '$']]
 
 [params]
+  minify = true
+  disableGeneratorVersion = true
+  disableHugoGeneratorInject=true
+  disableAssetsBusting = true
+  # disableRandomIds = true
   #editURL = "https://apmath-spbu.github.io/"
   # description = "Материалы курсов на кафедре Технологии Программирования. ПМ-ПУ"
   # author = "Alexander Ulanov"
