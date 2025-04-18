@@ -33,6 +33,7 @@ sectionPagesMenu = "main"
   titleSeparator = "::"
   themeVariant = "green"
   math = true
+  defaultContentSort = "weight"
   # enableEmoji = true
   [[params.boxStyle]]
     color = 'blue'

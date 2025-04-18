@@ -2,7 +2,7 @@
 title: "8. Хеширование"
 date: 2025-03-02T11:30:34+03:00
 draft: false
-weight: 8
+weight: 80
 ---
 
 
