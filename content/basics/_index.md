@@ -2,6 +2,6 @@
 title = "Basics"
 type = "chapter"
 weight = 1
+[build]
+  render = 'never'
 +++
-
-This is a new chapter.

@@ -27,6 +27,7 @@ sectionPagesMenu = "main"
   disableHugoGeneratorInject=true
   disableAssetsBusting = true
   # disableRandomIds = true
+  disableLandingPageButton = true
   #editURL = "https://apmath-spbu.github.io/"
   # description = "Материалы курсов на кафедре Технологии Программирования. ПМ-ПУ"
   # author = "Alexander Ulanov"
