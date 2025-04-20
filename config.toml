@@ -21,6 +21,9 @@ sectionPagesMenu = "main"
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)'], ['$', '$']]
 
+[params.imageEffects]
+  lightbox = false
+
 [params]
   minify = true
   disableGeneratorVersion = true
