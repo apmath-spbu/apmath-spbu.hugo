@@ -1,7 +1,7 @@
 ---
 title: "Расстояние Левенштейна"
 date: 2025-04-24T16:21:19+03:00
-draft: true
+draft: false
 weight: 20
 ---
 
