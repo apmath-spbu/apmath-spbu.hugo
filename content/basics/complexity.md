@@ -213,7 +213,7 @@ $$
 {{% notice style="prove" expanded="true" %}}
 Мы уже знаем, что $\log _{b} n=\Theta(\log n)$ для любого $b>1$, тогда верно и $\log _{b}^{x} n=\Theta\left(\log ^{x} n\right)$ (соответствующие константы из определения $\Theta(\cdot)$ нужно возвести в степень $x$ ). Значит, достаточно доказать, что $\log ^{x} n=o\left(n^{y}\right)$.
 
-Рассмотрим $0<\varepsilon<y$. По лемме 1.3.1, $n^{y-\varepsilon}=o\left(n^{y}\right), n^{y}=o\left(n^{y+\varepsilon}\right)$.
+Рассмотрим $0 < \varepsilon < y$. По лемме 1.3.1, $n^{y-\varepsilon}=o\left(n^{y}\right), n^{y}=o\left(n^{y+\varepsilon}\right)$.
 Из предложения 1.3.4 следует, что $\log ^{x} n=O\left(n^{y-\varepsilon}\right), n^{y+\varepsilon}=O\left(z^{n}\right)$ (с константой, равной единице).
 
 Тогда $\log ^{x} n=O\left(n^{y-\varepsilon}\right)=o\left(n^{y}\right), n^{y}=o\left(n^{y+\varepsilon}\right)=o\left(z^{n}\right)$.
