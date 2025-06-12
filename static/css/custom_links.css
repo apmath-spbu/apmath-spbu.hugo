@@ -1,0 +1,11 @@
+a[href*="wikipedia.org"]::after {
+    font-family: "FontAwesome";
+    content: " \f08e \f266";
+    font-weight: 400;
+
+    /* Superscript Styling */
+    vertical-align: super;
+    font-size: 0.7em;
+    margin-left: 3px;
+    line-height: 1;
+}

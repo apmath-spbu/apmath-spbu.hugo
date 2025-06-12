@@ -20,6 +20,9 @@ sectionPagesMenu = "main"
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)'], ['$', '$']]
+      [markup.goldmark.extensions.extras]
+        [markup.goldmark.extensions.extras.superscript]
+          enable = true
 
 [params.imageEffects]
   lightbox = false
@@ -43,6 +46,7 @@ sectionPagesMenu = "main"
   titleSeparator = "::"
   themeVariant = "green"
   math = true
+  linkicons = true
   defaultContentSort = "weight"
   # enableEmoji = true
   [[params.boxStyle]]
