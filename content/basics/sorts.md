@@ -1,7 +1,7 @@
 ---
 title: "6. Сортировки"
 date: 2025-02-23T13:44:51+03:00
-draft: false
+draft: true
 weight: 60
 ---
 

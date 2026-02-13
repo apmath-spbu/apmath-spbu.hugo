@@ -1,7 +1,7 @@
 ---
 title: "4. Базовые структуры данных"
 date: 2025-02-16T12:32:57+03:00
-draft: false
+draft: true
 weight: 40
 ---
 

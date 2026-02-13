@@ -1,7 +1,7 @@
 ---
 title: "5. Двоичный поиск"
 date: 2025-02-16T12:46:35+03:00
-draft: false
+draft: true
 weight: 50
 ---
 
