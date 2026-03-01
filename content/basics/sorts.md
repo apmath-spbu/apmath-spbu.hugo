@@ -1,7 +1,7 @@
 ---
 title: "6. Сортировки"
-date: 2025-02-23T13:44:51+03:00
-draft: true
+date: 2026-03-01T09:30:00+03:00
+draft: false
 weight: 60
 ---
 
@@ -12,25 +12,71 @@ weight: 60
 ### Сортировка выбором
 
 Сортировка выбором (selection sort) на $i$-м шаге находит $i$-й по возрастанию элемент и ставит его на $i$-ю позицию. Поскольку первые $i-1$ элементов в этот момент уже стоят на своих позициях, достаточно просто найти минимальный элемент в подотрезке $[i, n)$.
-```py
-for i = 0..(n - 1):
-    minPos = i
-    for j = (i + 1)..(n - 1):
-        if a[minPos] > a[j]:
-            minPos = j
-    swap(a[i], a[minPos])
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_pos = i
+        for j in range(i + 1, n):
+            if arr[min_pos] > arr[j]:
+                min_pos = j
+        arr[i], arr[min_pos] = arr[min_pos], arr[i]
+    return arr
 ```
+{{% /tab %}}
+{{% tab color="blue" title="cpp" %}}
+```cpp
+void selectionSort(std::vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 0; i < n; i++) {
+        int minPos = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[minPos] > arr[j]) {
+                minPos = j;
+            }
+        }
+        std::swap(arr[i], arr[minPos]);
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
+
 &nbsp;
 {{< video2 "https://github.com/apmath-spbu/manim-sorts/raw/refs/heads/main/SelectionSort.mp4" "my-5">}}
 
 ### Сортировка вставками
 
 На $i$-м шаге сортировки вставками (insertion sort) первые $i$ элементов массива (образующие префикс длины $i$ ) расположены в отсортированном порядке. $i$-й шаг состоит в том, что $i$-й элемент массива вставляется в нужную позицию остортированного префикса.
-```py
-for i = 1..(n - 1):
-    for (j = i; j > 0 and a[j] < a[j - 1]; --j):
-        swap(a[j], a[j - 1])
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+
+def insertion_sort(a):
+    n = len(a)
+    for i in range(1, n):
+        j = i
+        while j > 0 and a[j] < a[j - 1]:
+            a[j], a[j - 1] = a[j - 1], a[j]
+            j -= 1
+    return a
 ```
+{{% /tab %}}
+{{% tab color="blue" title="cpp" %}}
+```cpp
+void insertionSort(std::vector<int>& a) {
+    int n = a.size();
+    for (int i = 1; i < n; ++i) {
+        for (int j = i; j > 0 && a[j] < a[j - 1]; --j) {
+            std::swap(a[j], a[j - 1]);
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 #### Время работы
 
@@ -54,27 +100,93 @@ for i = 1..(n - 1):
 ### Сортировка слиянием (Merge sort)
 
 Сортировка слиянием (Von Neumann, 1945) использует метод "разделяй и властвуй" следующим образом: массив делится на две части, каждая из них сортируется рекурсивно, после чего две отсортированных части сливаются при помощи метода двух указателей.
-```py
-mergeSort(a, l, r): # coртирует a[l, r)
-    if r - l <= 1:
-        return
-    m = (l + r) / 2
-    mergeSort(a, l, m)
-    mergeSort(a, m, r)
-    merge(a, l, m, r)
-
-# merge использует вспомогательный массив buf достаточно большого размера
-merge(a, l, m, r): # сливает два отсортированных отрезка а[l, m) и а[m, r)
-    for (i = l, j = m, k = 0; i < m or j < r; ):
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+def merge(a, l, m, r, buf):
+    # Сливает два отсортированных отрезка a[l:m) и a[m:r)
+    i, j, k = l, m, 0
+    
+    while i < m or j < r:
         if i == m or (j < r and a[i] > a[j]):
             buf[k] = a[j]
-            k += 1, j += 1
+            k += 1
+            j += 1
         else:
             buf[k] = a[i]
-            k += 1, i += 1
-    for i = 0..(r - l - 1):
-            a[l + i] = buf[i]
+            k += 1
+            i += 1
+    
+    # Копируем результат обратно в исходный массив
+    for idx in range(r - l):
+        a[l + idx] = buf[idx]
+
+
+def merge_sort(a, l, r, buf):
+    # Сортирует a[l:r)
+    if r - l <= 1:
+        return
+    
+    m = (l + r) // 2
+    merge_sort(a, l, m, buf)
+    merge_sort(a, m, r, buf)
+    merge(a, l, m, r, buf)
+
+
+def sort_array(arr):
+    # Вспомогательная функция для удобства вызова
+    buf = [0] * len(arr)
+    merge_sort(arr, 0, len(arr), buf)
+    return arr
 ```
+{{% /tab %}}
+{{% tab color="blue" title="cpp" %}}
+```cpp
+#include <iostream>
+#include <vector>
+
+// Сливает два отсортированных отрезка a[l, m) и a[m, r)
+void merge(std::vector<int>& a, int l, int m, int r, std::vector<int>& buf) {
+    int i = l, j = m, k = 0;
+    
+    while (i < m || j < r) {
+        if (i == m || (j < r && a[i] > a[j])) {
+            buf[k] = a[j];
+            ++k;
+            ++j;
+        } else {
+            buf[k] = a[i];
+            ++k;
+            ++i;
+        }
+    }
+    
+    // Копируем результат обратно в исходный массив
+    for (int idx = 0; idx < r - l; ++idx) {
+        a[l + idx] = buf[idx];
+    }
+}
+
+// Сортирует a[l, r)
+void mergeSort(std::vector<int>& a, int l, int r, std::vector<int>& buf) {
+    if (r - l <= 1) {
+        return;
+    }
+    
+    int m = (l + r) / 2;
+    mergeSort(a, l, m, buf);
+    mergeSort(a, m, r, buf);
+    merge(a, l, m, r, buf);
+}
+
+// Вспомогательная функция для удобства вызова
+void sortArray(std::vector<int>& arr) {
+    std::vector<int> buf(arr.size());
+    mergeSort(arr, 0, arr.size(), buf);
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Время работы сортировки слиянием можно оценить с помощью рекуррентного соотношения $T(n)=2 \cdot T\left(\frac{n}{2}\right)+\Theta(n)$. По [основной теореме о рекуррентных соотношениях]({{% relref "basics/recurrence_relation" %}}) получаем $T(n)=\Theta(n \log n)$.
 
@@ -85,42 +197,160 @@ merge(a, l, m, r): # сливает два отсортированных отр
 ### Быстрая сортировка (Quicksort)
 
 Быстрая сортировка (Hoare, 1959) также использует метод "разделяй и властвуй", но немного по-другому. Возьмём какой-нибудь элемент массива - $x$. Поделим массив на три части так, что в первой все элементы меньше $x$, во второй равны $x$, в третьей больше $x$ (это можно сделать за линейное от длины массива время, например, с помощью трёх вспомогательных массивов). Остаётся рекурсивно отсортировать первую и третью части.
-```py
-quickSort(a):
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+import random
+
+def quick_sort(a):
     if len(a) <= 1:
-        return
-    x = randomElement(a) # x - случайный элемент а
-    a --> l (< x), m (= x), r (> x) # делим а на три части
-    return quickSort(l) + m + quickSort(r)
+        return a
+    
+    x = random.choice(a)  # случайный элемент a
+    
+    l = []  # элементы меньше x
+    m = []  # элементы равные x
+    r = []  # элементы больше x
+    
+    for element in a:
+        if element < x:
+            l.append(element)
+        elif element == x:
+            m.append(element)
+        else:  # element > x
+            r.append(element)
+    
+    return quick_sort(l) + m + quick_sort(r)
 ```
+{{% /tab %}}
+{{% tab color="blue" title="cpp" %}}
+```cpp
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
+std::vector<int> quickSort(std::vector<int> a) {
+    if (a.size() <= 1) {
+        return a;
+    }
+    
+    // Выбираем случайный элемент
+    int randomIndex = rand() % a.size();
+    int x = a[randomIndex];
+    
+    std::vector<int> l; // элементы меньше x
+    std::vector<int> m; // элементы равные x
+    std::vector<int> r; // элементы больше x
+    
+    for (int element : a) {
+        if (element < x) {
+            l.push_back(element);
+        } else if (element == x) {
+            m.push_back(element);
+        } else { // element > x
+            r.push_back(element);
+        }
+    }
+    
+    // Рекурсивно сортируем левую и правую части
+    std::vector<int> sorted_l = quickSort(l);
+    std::vector<int> sorted_r = quickSort(r);
+    
+    // Объединяем результаты
+    std::vector<int> result;
+    result.reserve(sorted_l.size() + m.size() + sorted_r.size());
+    
+    result.insert(result.end(), sorted_l.begin(), sorted_l.end());
+    result.insert(result.end(), m.begin(), m.end());
+    result.insert(result.end(), sorted_r.begin(), sorted_r.end());
+    
+    return result;
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
+
 
 На практике, чтобы алгоритм работал быстрее и использовал меньше дополнительной памяти, используют более хитрый способ деления массива на части:
-```py
-# partition выбирает x - случайный элемент a[l, r],
-# переставляет местами элементы a[l, r] и возвращает m (l <= m < r) такое, что
-# все элементы a[l, m] меньше или равны x, все элементы a[m + 1, r] больше или равны x
-partition(a, l, r) -> int:
-    p = random(l, r), x = a[p]
-    swap(a[p], a[l]) # теперь x стоит на l-й позиции
-    i = l, j = r
-    while i <= j:
-        while a[i] < x:
-            i += 1
-            while a[j] > x:
-                j -= 1
-            if i >= j:
-            break
-            swap(a[i], a[j])
-            i += 1, j -= 1
-        return j
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+import random
 
-quickSort(a, l, r): # coртирует a[l, r]
-        if l == r:
-            return
+def partition(a, l, r):
+    # выбираем случайный элемент
+    p = random.randint(l, r)
+    x = a[p]
+    # меняем его с первым элементом
+    a[p], a[l] = a[l], a[p]
+    i, j = l, r
+    
+    while i <= j:
+        while i <= j and a[i] < x:
+            i += 1
+        while i <= j and a[j] > x:
+            j -= 1
+        if i >= j:
+            break
+        a[i], a[j] = a[j], a[i]
+        i += 1
+        j -= 1
+    
+    return j
+
+def quick_sort(a, l, r):
+    if l >= r:  # исправлено условие: l == r -> l >= r
+        return
+    
     m = partition(a, l, r)
-    quickSort(a, l, m)
-    quickSort(a, m + 1, r)
+    quick_sort(a, l, m)
+    quick_sort(a, m + 1, r)
 ```
+{{% /tab %}}
+{{% tab color="blue" title="cpp" %}}
+```cpp
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
+int partition(std::vector<int>& a, int l, int r) {
+    // выбираем случайный элемент
+    int p = l + rand() % (r - l + 1);
+    int x = a[p];
+    // меняем его с первым элементом
+    std::swap(a[p], a[l]);
+    int i = l, j = r;
+    
+    while (i <= j) {
+        while (i <= j && a[i] < x) {
+            i++;
+        }
+        while (i <= j && a[j] > x) {
+            j--;
+        }
+        if (i >= j) {
+            break;
+        }
+        std::swap(a[i], a[j]);
+        i++;
+        j--;
+    }
+    
+    return j;
+}
+
+void quickSort(std::vector<int>& a, int l, int r) {
+    if (l >= r) {  // исправлено условие: l == r -> l >= r
+        return;
+    }
+    
+    int m = partition(a, l, r);
+    quickSort(a, l, m);
+    quickSort(a, m + 1, r);
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 >[!props]
 >Функция partition работает корректно, то есть $i$ и $j$ не выходят за границы $l, r$, функция возвращает такое $m$, что $l \leqslant m < r$, все элементы $a[l, m]$ меньше или равны $x$, все элементы $a[m+1, r]$ больше или равны $x$.
@@ -214,16 +444,45 @@ $k$-я порядковая статистика на массиве из $n$ э
 Можно отсортировать массив за $O(n \log n)$, тогда $k$-я порядковая статистика окажется на $k$-й позиции (если нумеровать элементы массива, начиная с единицы). Однако существуют и более быстрые алгоритмы, находящие $k$-ю порядковую статистику для произвольного $k$ за $O(n)$.
 
 Вернёмся к алгоритму быстрой сортировки. Когда мы поделили массив на две части, можно понять, в какой из этих частей находится $k$-й по возрастанию элемент: если размер левой части хотя бы $k$, то он находится в ней, иначе он находится в правой части. Тогда, если нас интересует не весь отсортированный массив, а только $k$-й по возрастанию элемент, можно сделать рекурсивный запуск только от той части, в которой он лежит.
-```py
-kthElement(a, l, r, k): # находит k-ю порядковую статистику в a[l, r]
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+def kthElement(a, l, r, k):
+    """
+    Находит k-ю порядковую статистику в a[l, r]
+    """
     if l == r:
         return a[l]
+    
     m = partition(a, l, r)
+    
     if m - l + 1 >= k:
         return kthElement(a, l, m, k)
     else:
         return kthElement(a, m + 1, r, k - (m - l + 1))
+
 ```
+{{% /tab %}}
+{{% tab color="blue" title="cpp" %}}
+```cpp
+#include <vector>
+// Находит k-ю порядковую статистику в a[l, r]
+int kthElement(std::vector<int>& a, int l, int r, int k) {
+    if (l == r) {
+        return a[l];
+    }
+    
+    int m = partition(a, l, r);
+    
+    if (m - l + 1 >= k) {
+        return kthElement(a, l, m, k);
+    } else {
+        return kthElement(a, m + 1, r, k - (m - l + 1));
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 В худшем случае такой алгоритм будет работать по-прежнему за $\Theta\left(n^{2}\right)$. Однако оказывается, что оценка среднего времени работы после такой оптимизации улучшается с $O(n \log n)$ до $O(n)$.
 
@@ -276,40 +535,126 @@ $$
 ### Сортировка подсчётом
 
 Если известно, что все числа во входном массиве целые, неотрицательные и меньше некоторого $k$, то их можно отсортировать за $\Theta(n+k)$ (при этом понадобится $\Theta(k)$ вспомогательной памяти). Для этого посчитаем, сколько раз встретилось каждое число от 1 до $k$, после чего просто выпишем каждое число в ответ столько раз, сколько он встречалось в исходном массиве.
-```py
-int c[k]
-countingSort(a, n):
-    for i = 0..(k - 1):
-        c[i] = 0
-    for i = 0..(n - 1):
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+def counting_sort(a, n, k):
+    c = [0] * k
+    
+    for i in range(n):
         c[a[i]] += 1
+    
     p = 0
-    for i = 0..(k - 1):
-        for j = 0..(c[i] - 1):
+    for i in range(k):
+        for j in range(c[i]):
             a[p] = i
             p += 1
+    
+    return a
+
 ```
+{{% /tab %}}
+{{% tab color="blue" title="cpp" %}}
+```cpp
+#include <vector>
+
+void countingSort(int a[], int n, int k) {
+    std::vector<int> c(k, 0);
+    
+    for (int i = 0; i < n; i++) {
+        c[a[i]]++;
+    }
+    
+    int p = 0;
+    for (int i = 0; i < k; i++) {
+        for (int j = 0; j < c[i]; j++) {
+            a[p] = i;
+            p++;
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Ясно, что таким же образом можно сортировать целые числа, лежащие в диапазоне $[L, R)$, за $\Theta(n+(R-L))$.
 
 Если воспользоваться ещё одним вспомогательным массивом, сортировку можно сделать стабильной:
-```py
-int c[k]
-countingSort(a, n):
-    for i = 0..(k - 1):
-        c[i] = 0
-    for i = 0..(n - 1):
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+def counting_sort(a, n, k):
+    # Создаем массив c размера k и заполняем нулями
+    c = [0] * k
+    
+    # Подсчитываем количество каждого элемента
+    for i in range(n):
         c[a[i]] += 1
-    for i = 1..(k - 1):
+    
+    # Вычисляем накопленные суммы
+    for i in range(1, k):
         c[i] += c[i - 1]
     # теперь с[i] - количество элементов массива, не превосходящих i
-    int b[n]
-    for i = (n - 1)..0:
+    
+    # Создаем временный массив b
+    b = [0] * n
+    
+    # Заполняем массив b в правильном порядке
+    for i in range(n - 1, -1, -1):
         c[a[i]] -= 1
         b[c[a[i]]] = a[i]
-    for i = 0..(n - 1):
+    
+    # Копируем результат обратно в исходный массив
+    for i in range(n):
         a[i] = b[i]
+    
+    return a
+
 ```
+{{% /tab %}}
+{{% tab color="blue" title="cpp" %}}
+```cpp
+#include <vector>
+
+void countingSort(int a[], int n, int k) {
+    // Создаем массив c размера k и заполняем нулями
+    int* c = new int[k];
+    for (int i = 0; i < k; i++) {
+        c[i] = 0;
+    }
+    
+    // Подсчитываем количество каждого элемента
+    for (int i = 0; i < n; i++) {
+        c[a[i]]++;
+    }
+    
+    // Вычисляем накопленные суммы
+    for (int i = 1; i < k; i++) {
+        c[i] += c[i - 1];
+    }
+    // теперь с[i] - количество элементов массива, не превосходящих i
+    
+    // Создаем временный массив b
+    int* b = new int[n];
+    
+    // Заполняем массив b в правильном порядке
+    for (int i = n - 1; i >= 0; i--) {
+        c[a[i]]--;
+        b[c[a[i]]] = a[i];
+    }
+    
+    // Копируем результат обратно в исходный массив
+    for (int i = 0; i < n; i++) {
+        a[i] = b[i];
+    }
+    
+    // Освобождаем выделенную память
+    delete[] c;
+    delete[] b;
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Стабильная сортировка подсчётом пригодится нам в следующем алгоритме сортировки.
 
@@ -318,11 +663,30 @@ countingSort(a, n):
 Пусть дан массив из $n$ чисел, записанных в $k$-ичной системе счисления и имеющих не более $d$ разрядов каждое. Отсортируем числа сортировкой подсчётом $d$ раз - сначала по младшему разряду, потом по следующему, и так далее, в конце - по старшему разряду. При этом будем пользоваться стабильной версией сортировки подсчётом.
 
 После первого шага числа будут отсортированы по 0-му разряду, после второго по 1-му разряду, а при равенстве цифр в 1-м разряде - по 0-му. В конце числа будут отсортированы по $(d-1)$-му разряду, при равенстве цифр в $(d-1)$-м разряде - по ( $d-2)$-му,..., при равенстве цифр во всех разрядах, кроме 0-го - по 0-му. Значит числа просто окажутся отсортированы в порядке возрастания.
-```py
-radixSort(a, n, d):
-    for i = 0..(d - 1):
-        countingSort(a, n, i) # стабильная сортировка подсчётом по i-му разряду
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+def radixSort(a, n, d):
+    # Поразрядная сортировка
+    # d - количество разрядов в максимальном числе
+    
+    for i in range(d):
+        counting_sort(a, n, i)  # стабильная сортировка подсчётом по i-му разряду
 ```
+{{% /tab %}}
+{{% tab color="blue" title="cpp" %}}
+```cpp
+void radixSort(int a[], int n, int d) {
+    // Поразрядная сортировка
+    // d - количество разрядов в максимальном числе
+    
+    for (int i = 0; i < d; i++) {
+        countingSort(a, n, i);  // стабильная сортировка подсчётом по i-му разряду
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Каждый шаг алгоритма работает за $\Theta(n+k)$, тогда время работы всего алгоритма $\Theta(d(n+k))$. Поразрядная сортировка является стабильной.
 
