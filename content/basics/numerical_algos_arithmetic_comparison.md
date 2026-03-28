@@ -1,8 +1,8 @@
 ---
 title: "9. Арифметика сравнений"
-date: 2025-03-15T19:04:59+03:00
+date: 2026-03-28T09:00:00+03:00
 weight: 90
-draft: true
+draft: false
 ---
 
 
@@ -20,16 +20,36 @@ $$
 a^{b}= \begin{cases}\left(a^{\left\lfloor\frac{b}{2}\right\rfloor}\right)^{2}, & \text { если } b \text { чётно, } \\ a \cdot\left(a^{\left\lfloor\frac{b}{2}\right\rfloor}\right)^{2}, & \text { иначе. }\end{cases}
 $$
 
-```py
-modExp(a, b, N): # a и b - двоичные записи чисел, N - модуль
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+def modExp(a, b, N):
+    # a, b, N - целые числа
     if b == 0:
         return 1
-    c = modExp(a, b / 2, N) # деление нацело
+    c = modExp(a, b // 2, N)  # целочисленное деление
     if b % 2 == 0:
-        return c ** 2 mod N
+        return (c * c) % N
     else:
-        return a * c ** 2 mod N
+        return (a * c * c) % N
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+int modExp(int a, int b, int N) {
+    if (b == 0) {
+        return 1;
+    }
+    int c = modExp(a, b / 2, N);  // целочисленное деление
+    if (b % 2 == 0) {
+        return (c * c) % N;
+    } else {
+        return (a * c * c) % N;
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Если $n$ - максимальная длина чисел $a, b, N$, то происходит $O(n)$ рекурсивных вызовов, на каждом из которых не более двух умножений по модулю $N$. Получаем оценку сложности $O(n \cdot M(n))$.
 
@@ -44,17 +64,45 @@ modExp(a, b, N): # a и b - двоичные записи чисел, N - мод
 {{% /notice %}}
 
 Алгоритм Евклида пользуется вышеописанным правилом, пока не окажется, что $b=0$. Ясно, что $\operatorname{gcd}(a, 0)=a$ для любого $a$.
-```py
-gcd(a, b): # a, b >= 0
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+def gcd(a, b):  # a, b >= 0
     if b == 0:
         return a
     return gcd(b, a % b)
-gcd(a, b): # нерекурсивная версия
+
+
+def gcd_iterative(a, b):  # нерекурсивная версия
     while b > 0:
-        a %=b
-        swap(a, b)
+        a %= b
+        a, b = b, a  # swap(a, b)
     return a
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+#include <utility>
+
+// Рекурсивная версия
+int gcd(int a, int b) {  // a, b >= 0
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
+// Нерекурсивная версия
+int gcd_iterative(int a, int b) {  // a, b >= 0
+    while (b > 0) {
+        a %= b;
+        std::swap(a, b);
+    }
+    return a;
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Оценим время работы алгоритма:
 >[!lemma]
@@ -91,13 +139,31 @@ $$
 >>$a$ и $b$ делятся на $d$, тогда $d \leqslant \operatorname{gcd}(a, b)$. С другой стороны $a$ и $b$ делятся на $\operatorname{gcd}(a, b)$, тогда и $d=a x+b y$ делится на $\operatorname{gcd}(a, b)$, то есть $d \geqslant \operatorname{gcd}(a, b)$.
 
 Такие $x$ и $y$ всегда можно найти следующим алгоритмом:
-```py
-extendedEuclid(a, b): # возвращает x,y такие, что ax + by = gcd(a, b)
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+def extendedEuclid(a, b):  # возвращает x,y такие, что ax + by = gcd(a, b)
     if b == 0:
         return 1, 0
     x, y = extendedEuclid(b, a % b)
-    return y, x - (a / b) * y # деление нацело
+    return y, x - (a // b) * y  # целочисленное деление
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+#include <utility>
+
+// возвращает x,y такие, что ax + by = gcd(a, b)
+std::pair<int, int> extendedEuclid(int a, int b) {
+    if (b == 0) {
+        return {1, 0};
+    }
+    auto [x, y] = extendedEuclid(b, a % b);
+    return {y, x - (a / b) * y}; 
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 >[!corollar]
 >Вышеописанный алгоритм возвращает такие $x, y$, что $a x+b y=$ $\operatorname{gcd}(a, b)$.
@@ -121,9 +187,9 @@ extendedEuclid(a, b): # возвращает x,y такие, что ax + by = gc
 
 База. При $b=0$ алгоритм возвращает $x=1, y=0$ (случай $b=0$ не подходит под условие предложения, но нужен нам как база индукции).
 
-Переход. Если $a \bmod b=0$, то extendedEuclid(b, a mod b) вернул $x^{\prime}=1, y^{\prime}=0$. Тогда extendedEuclid(a, b) вернёт $x=0 \leqslant b, y=1 \leqslant a$.
+Переход. Если $a \bmod b=0$, то $\operatorname{extendedEuclid}(b, a \bmod b)$ вернул $x^{\prime}=1, y^{\prime}=0$. Тогда $\operatorname{extendedEuclid}(a, b)$ вернёт $x=0 \leqslant b, y=1 \leqslant a$.
 
-Если же $a \bmod b \neq 0$, то по предположению индукции extendedEuclid(b, a mod b) вернул такие $x^{\prime}, y^{\prime}$, что $\left|x^{\prime}\right| \leqslant a \bmod b,\left|y^{\prime}\right| \leqslant b$. Тогда extendedEuclid(a, b) вернёт $|x|=\left|y^{\prime}\right| \leqslant b,|y|=\left|x^{\prime}-\left\lfloor\frac{a}{b}\right\rfloor y^{\prime}\right| \leqslant\left|x^{\prime}\right|+\left\lfloor\frac{a}{b}\right\rfloor\left|y^{\prime}\right| \leqslant a \bmod b+\left\lfloor\frac{a}{b}\right\rfloor b=a$.
+Если же $a \bmod b \neq 0$, то по предположению индукции $\operatorname{extendedEuclid}(b, a \bmod b)$ вернул такие $x^{\prime}, y^{\prime}$, что $\left|x^{\prime}\right| \leqslant a \bmod b,\left|y^{\prime}\right| \leqslant b$. Тогда $\operatorname{extendedEuclid}(a, b)$ вернёт $|x|=\left|y^{\prime}\right| \leqslant b,|y|=\left|x^{\prime}-\left\lfloor\frac{a}{b}\right\rfloor y^{\prime}\right| \leqslant\left|x^{\prime}\right|+\left\lfloor\frac{a}{b}\right\rfloor\left|y^{\prime}\right| \leqslant a \bmod b+\left\lfloor\frac{a}{b}\right\rfloor b=a$.
 
 {{% /notice %}}
 
@@ -133,7 +199,7 @@ extendedEuclid(a, b): # возвращает x,y такие, что ax + by = gc
 >[!corollar]
 Время работы использующего деление в столбик расширенного алгоритма Евклида на числах длины не более $n$ есть $O\left(n^{2}\right)$.
 >{{% notice style="prove" expanded="true" %}}
-Для того, чтобы повторить доказательство теоремы 9.3, достаточно показать, что суммарное время работы всех операций, кроме рекурсивного вызова, в extendedEuclid(a,b) на числах длины $n$ и $m$ соответственно, есть $O(n(n-m+1))$.
+Для того, чтобы повторить доказательство теоремы, достаточно показать, что суммарное время работы всех операций, кроме рекурсивного вызова, в $\operatorname{extendedEuclid}(a,b)$ на числах длины $n$ и $m$ соответственно, есть $O(n(n-m+1))$.
 
 Частное $\left\lfloor\frac{a}{b}\right\rfloor$ можно вычислить одновременно с остатком $a \bmod b$ за $O(n(n-m+1))$. Также нужно произвести умножение $\left\lfloor\frac{a}{b}\right\rfloor$ на $y$, но, поскольку длина $\left\lfloor\frac{a}{b}\right\rfloor$ не превосходит $n-m+1$, а длина $y$ не превосходит $n$, это умножение имеет ту же сложность, что и деление выше. Помимо умножения и деления, происходит ещё лишь линейное от $n$ число действий.
 
