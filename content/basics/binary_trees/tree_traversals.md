@@ -1,7 +1,7 @@
 ---
 title: "12.2. Обходы деревьев"
 date: 2026-04-02T09:30:00+03:00
-draft: true
+draft: false
 weight: 122
 ---
 
@@ -17,6 +17,30 @@ weight: 122
 | Центрированный (inorder) | Лево → Корень → Право | Сортировка, вывод BST по возрастанию |
 | Обратный (postorder) | Лево → Право → Корень | Удаление дерева, постфиксные выражения |
 | В ширину (level-order) | По уровням сверху вниз | Поиск в ширину, вывод по уровням |
+
+### Сравнение обходов на одном дереве
+
+Рассмотрим дерево:
+
+```mermaid
+graph TD
+    A((1)) --> B((2))
+    A --> C((3))
+    B --> D((4))
+    B --> E((5))
+    style A fill:#D6E4F0,stroke:#004E8C
+    style B fill:#D6E4F0,stroke:#004E8C
+    style C fill:#D6E4F0,stroke:#004E8C
+    style D fill:#E8F8F5,stroke:#27AE60
+    style E fill:#E8F8F5,stroke:#27AE60
+```
+
+| Обход | Порядок | Результат |
+|-------|---------|-----------|
+| Preorder | Корень → Лево → Право | **1**, 2, 4, 5, 3 |
+| Inorder | Лево → Корень → Право | 4, **2**, 5, **1**, 3 |
+| Postorder | Лево → Право → Корень | 4, 5, 2, 3, **1** |
+| Level-order | По уровням | **1**, 2, 3, 4, 5 |
 
 ## Прямой обход (Preorder)
 
@@ -583,26 +607,36 @@ def evaluate_expression_tree(root):
 {{% tab color="blue" title="c++" %}}
 ```cpp
 #include <string>
+#include <stdexcept>
 
-int evaluateExpressionTree(TreeNode* root) {
+// Узел дерева выражений хранит строку: число или оператор
+struct ExprNode {
+    std::string value;
+    ExprNode* left = nullptr;
+    ExprNode* right = nullptr;
+    ExprNode(const std::string& v) : value(v) {}
+};
+
+int evaluateExpressionTree(ExprNode* root) {
     if (root == nullptr) return 0;
 
-    // Если лист — это операнд
+    // Если лист — это операнд (число)
     if (root->left == nullptr && root->right == nullptr) {
-        return root->value;
+        return std::stoi(root->value);
     }
 
     // Рекурсивно вычисляем поддеревья
     int leftVal = evaluateExpressionTree(root->left);
     int rightVal = evaluateExpressionTree(root->right);
 
-    // Применяем оператор (предполагаем, что value хранит код операции)
-    switch (root->value) {
+    // Применяем оператор
+    char op = root->value[0];
+    switch (op) {
         case '+': return leftVal + rightVal;
         case '-': return leftVal - rightVal;
         case '*': return leftVal * rightVal;
         case '/': return leftVal / rightVal;
-        default: return 0;
+        default: throw std::invalid_argument("Unknown operator");
     }
 }
 ```

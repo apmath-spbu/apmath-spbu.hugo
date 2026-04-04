@@ -1,7 +1,7 @@
 ---
 title: "12.7. Б-деревья"
 date: 2026-04-02T09:30:00+03:00
-draft: true
+draft: false
 weight: 127
 ---
 
@@ -77,7 +77,17 @@ n \geqslant 1 + (t - 1) \sum_{i=1}^{h-1} t^i = 1 + (t - 1) \cdot \frac{t^h - t}{
 $$
 Откуда:
 $$
-h \leqslant \log_t \frac{n + t - 1}{t} + 1 \leqslant \log_t \frac{n + 1}{2} + 1
+t^h \leqslant n + t - 1 \implies h \leqslant \log_t(n + t - 1)
+$$
+
+Так как $t \geqslant 2$, имеем $t - 1 \leqslant t \leqslant n$, поэтому $n + t - 1 \leqslant 2n$ и:
+$$
+h \leqslant \log_t(n + t - 1) \leqslant \log_t(2n) = \log_t 2 + \log_t n
+$$
+
+Эквивалентная форма (используя $t^{h-1} \leqslant (n-1)/2$ при $n \geqslant 1$):
+$$
+h \leqslant \log_t \frac{n + 1}{2} + 1
 $$
 {{% /notice %}}
 

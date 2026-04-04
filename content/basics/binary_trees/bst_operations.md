@@ -1,7 +1,7 @@
 ---
 title: "12.3. Двоичное дерево поиска: операции"
 date: 2026-04-02T09:30:00+03:00
-draft: true
+draft: false
 weight: 123
 ---
 
@@ -12,15 +12,29 @@ weight: 123
 >[!def]
 >**Двоичное дерево поиска** — это бинарное дерево, для которого выполняется свойство BST: для любой вершины $x$ все ключи в левом поддереве $x$ меньше ключа $x$, а все ключи в правом поддереве $x$ больше ключа $x$.
 
-```
-Пример BST:
-        8
-       / \
-      3   10
-     / \    \
-    1   6    14
-       / \   /
-      4   7 13
+```mermaid
+graph TD
+    A((8)) --> B((3))
+    A --> C((10))
+    B --> D((1))
+    B --> E((6))
+    C --> F((" "))
+    C --> G((14))
+    E --> H((4))
+    E --> I((7))
+    G --> J((13))
+    G --> K((" "))
+    style F fill:none,stroke:none
+    style K fill:none,stroke:none
+    style A fill:#D6E4F0,stroke:#004E8C
+    style B fill:#D6E4F0,stroke:#004E8C
+    style C fill:#D6E4F0,stroke:#004E8C
+    style D fill:#E8F8F5,stroke:#27AE60
+    style E fill:#D6E4F0,stroke:#004E8C
+    style G fill:#D6E4F0,stroke:#004E8C
+    style H fill:#E8F8F5,stroke:#27AE60
+    style I fill:#E8F8F5,stroke:#27AE60
+    style J fill:#E8F8F5,stroke:#27AE60
 ```
 
 >[!props]
