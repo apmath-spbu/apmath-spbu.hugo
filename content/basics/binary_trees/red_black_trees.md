@@ -19,23 +19,36 @@ weight: 126
 >4. **Если вершина красная, то оба её ребёнка — чёрные.** (Не может быть двух красных вершин подряд на пути от корня к листу.)
 >5. **Все пути от любой вершины до листьев (NIL-вершин) содержат одинаковое количество чёрных вершин.** Это число называется **чёрной высотой** вершины.
 
+```mermaid
+graph TD
+    N7((7)) --> N3((3))
+    N7 --> N18((18))
+    N3 --> N2((2))
+    N3 --> N5((5))
+    N18 --> N11((11))
+    N18 --> N22((22))
+    N11 ~~~ N_1((" "))
+    N11 --> N14((14))
+    N22 --> N17((17))
+    N22 --> N27((27))
+
+    style N7 fill:#333,stroke:#333,color:#fff
+    style N3 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style N18 fill:#333,stroke:#333,color:#fff
+    style N2 fill:#333,stroke:#333,color:#fff
+    style N5 fill:#333,stroke:#333,color:#fff
+    style N11 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style N22 fill:#333,stroke:#333,color:#fff
+    style N14 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style N17 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style N27 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style N_1 fill:none,stroke:none
 ```
-Пример красно-чёрного дерева:
-(чёрные вершины показаны квадратами, красные — кругами)
 
-           ■7
-          /   \
-        ●3     ■18
-        / \    /   \
-      ■2  ■5 ●11    ■22
-                \    / \
-                ●14●17 ●27
-
-Свойства:
+Свойства данного дерева:
 - Корень 7 — чёрный ✓
 - Нет двух красных подряд ✓
 - Чёрная высота от любого узла до листьев одинакова ✓
-```
 
 >[!def]
 >**Чёрная высота** вершины $v$, обозначаемая $bh(v)$, — это количество чёрных вершин на любом пути от $v$ до листа (не считая саму $v$).
@@ -400,32 +413,86 @@ void insertFixup(RBNode<T>* node) {
 
 **Случай 1:** Дядя красный. Перекрашиваем родителя, дядю и дедушку.
 
-```
-        ■G                    ●G
-        / \                   / \
-      ●P   ●U    →          ■P   ■U
-       |                     |
-      ●N                    ●N
+```mermaid
+graph TD
+    subgraph "После"
+    G2((G)) --> P2((P))
+    G2 --> U2((U))
+    P2 --> N2((N))
+    P2 ~~~ X2((" "))
+    style G2 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style P2 fill:#333,stroke:#333,color:#fff
+    style U2 fill:#333,stroke:#333,color:#fff
+    style N2 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style X2 fill:none,stroke:none
+    end
+    subgraph "До"
+    G1((G)) --> P1((P))
+    G1 --> U1((U))
+    P1 --> N1((N))
+    P1 ~~~ Y1((" "))
+    style G1 fill:#333,stroke:#333,color:#fff
+    style P1 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style U1 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style N1 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style Y1 fill:none,stroke:none
+    end
 ```
 
-**Случай 2:** Дядя чёрный, узел — "внутренний" ребёнок. Поворот вокруг родителя.
+**Случай 2:** Дядя чёрный, узел — "внутренний" ребёнок. Поворот вокруг родителя (сводим к случаю 3).
 
-```
-        ■G                    ■G
-        / \                   / \
-      ●P   ■U    →          ●N   ■U
-        \                   /
-        ●N                ●P
+```mermaid
+graph TD
+    subgraph "После поворота"
+    G4((G)) --> N4((N))
+    G4 --> U4((U))
+    N4 --> P4((P))
+    N4 ~~~ Z4((" "))
+    style G4 fill:#333,stroke:#333,color:#fff
+    style N4 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style P4 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style U4 fill:#333,stroke:#333,color:#fff
+    style Z4 fill:none,stroke:none
+    end
+    subgraph "До"
+    G3((G)) --> P3((P))
+    G3 --> U3((U))
+    P3 ~~~ Z3((" "))
+    P3 --> N3((N))
+    style G3 fill:#333,stroke:#333,color:#fff
+    style P3 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style N3 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style U3 fill:#333,stroke:#333,color:#fff
+    style Z3 fill:none,stroke:none
+    end
 ```
 
-**Случай 3:** Дядя чёрный, узел — "внешний" ребёнок. Поворот вокруг дедушки.
+**Случай 3:** Дядя чёрный, узел — "внешний" ребёнок. Поворот вокруг дедушки + перекраска.
 
-```
-        ■G                    ■P
-        / \                   / \
-      ●P   ■U    →          ●N   ●G
-       |                           \
-      ●N                           ■U
+```mermaid
+graph TD
+    subgraph "После поворота"
+    P6((P)) --> N6((N))
+    P6 --> G6((G))
+    G6 ~~~ Z6((" "))
+    G6 --> U6((U))
+    style P6 fill:#333,stroke:#333,color:#fff
+    style N6 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style G6 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style U6 fill:#333,stroke:#333,color:#fff
+    style Z6 fill:none,stroke:none
+    end
+    subgraph "До"
+    G5((G)) --> P5((P))
+    G5 --> U5((U))
+    P5 --> N5((N))
+    P5 ~~~ Z5((" "))
+    style G5 fill:#333,stroke:#333,color:#fff
+    style P5 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style N5 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style U5 fill:#333,stroke:#333,color:#fff
+    style Z5 fill:none,stroke:none
+    end
 ```
 
 ## Удаление
