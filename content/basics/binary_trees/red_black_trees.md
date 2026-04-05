@@ -34,10 +34,10 @@ graph TD
 
     style N7 fill:#333,stroke:#333,color:#fff
     style N3 fill:#E74C3C,stroke:#C0392B,color:#fff
-    style N18 fill:#333,stroke:#333,color:#fff
+    style N18 fill:#E74C3C,stroke:#C0392B,color:#fff
     style N2 fill:#333,stroke:#333,color:#fff
     style N5 fill:#333,stroke:#333,color:#fff
-    style N11 fill:#E74C3C,stroke:#C0392B,color:#fff
+    style N11 fill:#333,stroke:#333,color:#fff
     style N22 fill:#333,stroke:#333,color:#fff
     style N14 fill:#E74C3C,stroke:#C0392B,color:#fff
     style N17 fill:#E74C3C,stroke:#C0392B,color:#fff
@@ -47,8 +47,8 @@ graph TD
 
 Свойства данного дерева:
 - Корень 7 — чёрный ✓
-- Нет двух красных подряд ✓
-- Чёрная высота от любого узла до листьев одинакова ✓
+- Нет двух красных подряд ✓ (красные 3, 18, 14, 17, 27 имеют чёрных родителей)
+- Чёрная высота от корня до листьев: все пути содержат ровно 2 чёрных узла ✓
 
 >[!def]
 >**Чёрная высота** вершины $v$, обозначаемая $bh(v)$, — это количество чёрных вершин на любом пути от $v$ до листа (не считая саму $v$).
