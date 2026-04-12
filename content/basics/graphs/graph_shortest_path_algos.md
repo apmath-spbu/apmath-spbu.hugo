@@ -17,35 +17,79 @@ draft: true
 
 Будем находить множества $A_{k}$ последовательно: $A_{0}=\{s\}$; пусть уже найдены $A_{0}, \ldots, A_{k-1}$, тогда $A_{k}$ - это множество вершин из $V \backslash A_{0} \backslash \cdots \backslash A_{k-1}$, в которые ведут рёбра из $A_{k-1}$. Быстро понимать, лежит ли уже вершина $v$ в одном из множеств, можно с помощью массива расстояний dist: $\operatorname{dist}[v]=k$, если $v \in A_{k} ; \operatorname{dist}[v]=\infty$, если множество, в котором лежит $v$, ещё не найдено (или если $v$ не достижима из $s$ ). Здесь $\infty$ - бесконечность; на практике в качестве $\infty$ можно использовать число, заведомо большее, чем длина любого кратчайшего пути; поскольку мы работаем с невзвешенными графами, подойдёт $\infty=|V|$.
 
-```py
-vector<vector<int> > A
-vector<int> dist(n) # в графе n вершин
-fill(dist, inf) # inf - "бесконечность"
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+dist = [float('inf')] * n
 dist[s] = 0
-A.push_back({s})
-for (i = 0; A[i].size() > 0; i += 1):
-    A.push_back({})
+A = [[s]]  # A[k] — вершины на расстоянии k
+i = 0
+while A[i]:
+    A.append([])
     for v in A[i]:
-        for u in es[v]:
-            if dist[u] == inf:
+        for u in adj[v]:
+            if dist[u] == float('inf'):
                 dist[u] = i + 1
-                A[i + 1].push_back(u)
+                A[i + 1].append(u)
+    i += 1
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+vector<int> dist(n, INT_MAX);
+dist[s] = 0;
+vector<vector<int>> A = {{s}};
+for (int i = 0; !A[i].empty(); i++) {
+    A.emplace_back();
+    for (int v : A[i]) {
+        for (int u : adj[v]) {
+            if (dist[u] == INT_MAX) {
+                dist[u] = i + 1;
+                A[i + 1].push_back(u);
+            }
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Этот алгоритм уже работает за $O(V+E)$, так как он просматривает список смежности каждой вершины не более одного раза. Можно ещё упростить алгоритм: представим, что множества $A_{0}, A_{1}, \ldots$ хранятся подряд в одном массиве: $q=A_{0} A_{1} A_{2} \ldots$ Тогда вышеописанный алгоритм просматривает элементы этого массива по порядку (то есть по очереди достаёт вершины из начала массива), и иногда добавляет новые вершины в конец массива. Значит, $q$ - это просто очередь; можно не хранить множества $A_{k}$ явно, вместо этого поддерживая очередь $q$. Получившийся алгоритм и называют поиском в ширину.
 
-```py
-vector<int> dist(n) # в графе n вершин
-fill(dist, inf)
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+from collections import deque
+
+dist = [float('inf')] * n
 dist[s] = 0
-q <-- s # кладём s в очередь
-while not q.empty():
-    q --> v # достаём v из очереди
-    for u in es[v]:
-        if dist[u] == inf:
+q = deque([s])
+while q:
+    v = q.popleft()
+    for u in adj[v]:
+        if dist[u] == float('inf'):
             dist[u] = dist[v] + 1
-            q <-- u
+            q.append(u)
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+vector<int> dist(n, INT_MAX);
+dist[s] = 0;
+queue<int> q;
+q.push(s);
+while (!q.empty()) {
+    int v = q.front(); q.pop();
+    for (int u : adj[v]) {
+        if (dist[u] == INT_MAX) {
+            dist[u] = dist[v] + 1;
+            q.push(u);
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 ### Дерево кратчайших путей
 
@@ -53,45 +97,102 @@ while not q.empty():
 
 Путь в этом дереве из $s$ в любую вершину $u$ - кратчайший; поэтому дерево поиска в ширину называют также деревом кратчайших путей. Для того, чтобы восстановить кратчайший путь из $s$ в $u$, нужно подниматься по рёбрам дерева из $u$, пока не попадём в $s$.
 
-```py
-if dist[u] == inf:
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+# В цикле BFS при обновлении dist:
+if dist[u] == float('inf'):
     dist[u] = dist[v] + 1
-    p[u] = v # v - родитель u в дереве кратчайших путей
-    q <-- u
+    parent[u] = v  # v — родитель u в дереве кратчайших путей
+    q.append(u)
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+// В цикле BFS при обновлении dist:
+if (dist[u] == INT_MAX) {
+    dist[u] = dist[v] + 1;
+    parent[u] = v; // v — родитель u в дереве кратчайших путей
+    q.push(u);
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 ![](/static/images/basics/graph/graph_and_shortest_path_tree.png)
 
 Граф и его дерево кратчайших путей
 
-```py
-vector<int> path
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+# Восстановление пути от s до u
+path = []
 while u != s:
-    path.push_back(u)
-    u = p[u]
-path.push_back(s)
-reverse(path.begin(), path.end())
+    path.append(u)
+    u = parent[u]
+path.append(s)
+path.reverse()
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+// Восстановление пути от s до u
+vector<int> path;
+while (u != s) {
+    path.push_back(u);
+    u = parent[u];
+}
+path.push_back(s);
+reverse(path.begin(), path.end());
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 ### 0-1-BFS
 
 Пусть теперь каждое ребро в графе имеет вес, равный 0 или 1 . Модифицируем алгоритм поиска в ширину следующим образом: вместо очереди будем использовать дек; при просмотре ребра $e$ из $v$ в $u$ будем класть $u$ в дек, если нашёлся более короткий путь до $u$, чем был известен ранее (если $\operatorname{dist}[u]>\operatorname{dist}[v]+w_{e}$ ). При этом положим $u$ в начало дека, если $w_{e}=0$, и в конец дека, если $w_{e}=1$.
 
-```py
-vector<int> dist(n) # в графе n вершин
-fill(dist, inf)
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+from collections import deque
+
+dist = [float('inf')] * n
 dist[s] = 0
-deque <-- s # кладём s в дек
-while not deque.empty():
-    v <-- deque # достаём v из начала дека
-    for u, w in es[v]: # u - конец ребра, w - его вес
+dq = deque([s])
+while dq:
+    v = dq.popleft()
+    for u, w in adj[v]:  # adj[v] хранит пары (вершина, вес)
         if dist[u] > dist[v] + w:
             dist[u] = dist[v] + w
             if w == 0:
-                u --> deque # кладём и в начало дека
+                dq.appendleft(u)  # в начало дека
             else:
-                deque <-- u # кладём u в конеп дека
+                dq.append(u)      # в конец дека
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+vector<int> dist(n, INT_MAX);
+dist[s] = 0;
+deque<int> dq;
+dq.push_back(s);
+while (!dq.empty()) {
+    int v = dq.front(); dq.pop_front();
+    for (auto [u, w] : adj[v]) { // adj[v] хранит пары {вершина, вес}
+        if (dist[u] > dist[v] + w) {
+            dist[u] = dist[v] + w;
+            if (w == 0)
+                dq.push_front(u);
+            else
+                dq.push_back(u);
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Заметим сначала, что для любой вершины $v$ значение $\operatorname{dist}[v]$ равно $\infty$, либо соответствует длине какого-то пути из $s$ в $v$, поэтому $\operatorname{dist}[v]$ не может оказаться меньше длины кратчайшего пути.
 
@@ -109,21 +210,49 @@ while not deque.empty():
 
 Второй способ - будем поддерживать свою очередь $q_{i}$ для каждого расстояния $i$. Вначале $q_{0}=\{s\}$, остальные очереди пустые; $\operatorname{dist}[s]=0, \operatorname{dist}[v]=\infty$ для $v \neq s$. Будем рассматривать очереди $q_{i}$ в порядке возрастания $i$. Для каждой вершины $v$ из $q_{i}$ такой, что $\operatorname{dist}[v]=i$, и каждого ребра $e=(v, u)$ такого, что $\operatorname{dist}[u]>\operatorname{dist}[v]+w_{e}$, обновим $\operatorname{dist}[u]$ и положим $u$ в $q_{d i s t[v]+w_{e}}$.
 
-```py
-vector<int> dist(n) # в графе n вершин
-fill(dist, inf)
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+from collections import deque
+
+max_dist = (n - 1) * k  # макс. возможное расстояние
+dist = [float('inf')] * n
 dist[s] = 0
-q[0] <-- s
-for i = 0..((n - 1) * k): # (n - 1) * k - максимально возможное расстояние
-    while not q[i].empty():
-        v <-- q[i]
+q = [deque() for _ in range(max_dist + 1)]
+q[0].append(s)
+for i in range(max_dist + 1):
+    while q[i]:
+        v = q[i].popleft()
         if dist[v] != i:
             continue
-        for u, w in es[v]:
+        for u, w in adj[v]:
             if dist[u] > dist[v] + w:
                 dist[u] = dist[v] + w
-                q[i + w] <-- u
+                q[dist[u]].append(u)
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+int maxDist = (n - 1) * k;
+vector<int> dist(n, INT_MAX);
+dist[s] = 0;
+vector<queue<int>> q(maxDist + 1);
+q[0].push(s);
+for (int i = 0; i <= maxDist; i++) {
+    while (!q[i].empty()) {
+        int v = q[i].front(); q[i].pop();
+        if (dist[v] != i) continue;
+        for (auto [u, w] : adj[v]) {
+            if (dist[u] > dist[v] + w) {
+                dist[u] = dist[v] + w;
+                q[dist[u]].push(u);
+            }
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 $\operatorname{dist}[v]$ снова всегда равняется длине какого-то пути от $s$ до $v$ (либо $\infty$ ). Покажем по индукции, что вершины $v$ такие, что $\operatorname{dist}[v]=i$ в момент извлечения $v$ из $q_{i}$ - это ровно вершины множества $A_{i}$. Это верно для $i=0$; для $i>0$ в $q_{i}$ попадают вершины из $V \backslash A_{0} \backslash \cdots \backslash A_{i-1}$, в которые ведёт ребро веса 1 из $A_{i-1}$, веса 2 из $A_{i-2}, \ldots$ или веса $k$ из $A_{i-k}$ (то есть вершины множества $A_{i}$ ), а также, возможно, часть вершин из $A_{0} \cup \cdots \cup A_{i-1}$, в которые ведут такие же рёбра. Тогда такие вершины $v$, что $\operatorname{dist}[v]=i$ в момент извлечения $v$ из $q_{i}$ - это ровно вершины множества $A_{i}$.
 
@@ -159,19 +288,50 @@ $$
 
 Удобно воспользоваться очередью с приоритетами: будем хранить в очереди ещё не рассмотренные вершины с приоритетами, равными значениям dist. Тогда в ходе алгоритма нужно $O(V)$ раз извлечь из очереди вершину с минимальным приоритетом, и $O(E)$ раз уменьшить приоритет вершины в очереди.
 
-```py
-vector<int> dist(n) # в графе n вершин
-fill(dist, inf)
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+import heapq
+
+dist = [float('inf')] * n
 dist[s] = 0
-for v = 0..(n - 1):
-    q <-- (v, dist[v]) # кладём в очередь вершину v с приоритетом dist[v]
-for i = 0..(n - 1):
-    v <-- q # достаём из очереди вершину с минимальным приоритетом
-    for u, w in es[v]:
+pq = [(0, s)]  # (приоритет, вершина)
+visited = [False] * n
+
+while pq:
+    d, v = heapq.heappop(pq)
+    if visited[v]:
+        continue
+    visited[v] = True
+    for u, w in adj[v]:
         if dist[u] > dist[v] + w:
             dist[u] = dist[v] + w
-            q.decreaseKey(u, dist[u]) # уменьшаем значение приоритета u до dist[u]
+            heapq.heappush(pq, (dist[u], u))
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+vector<int> dist(n, INT_MAX);
+dist[s] = 0;
+// min-heap: (расстояние, вершина)
+priority_queue<pair<int,int>, vector<pair<int,int>>, greater<>> pq;
+pq.push({0, s});
+vector<bool> visited(n, false);
+
+while (!pq.empty()) {
+    auto [d, v] = pq.top(); pq.pop();
+    if (visited[v]) continue;
+    visited[v] = true;
+    for (auto [u, w] : adj[v]) {
+        if (dist[u] > dist[v] + w) {
+            dist[u] = dist[v] + w;
+            pq.push({dist[u], u});
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Очередь с приоритетами можно реализовывать разными способами: можно просто хранить значения dist в массиве, и искать минимум проходом по массиву за $O(V)$ (дополнительно надо хранить пометки о том, была ли вершина уже рассмотрена). В этом случае время работы алгоритма составит $O(V \cdot V+E \cdot 1)=O\left(V^{2}+E\right)$.
 
@@ -193,21 +353,52 @@ for i = 0..(n - 1):
 
 Единственное отличие алгоритма $A^{*}$ от алгоритма Дейкстры: в качестве приоритета вершины $v$ используется не $\operatorname{dist}[v]$, а $\operatorname{dist}[v]+f[v]$.
 
-```py
-vector<int> dist(n) # в графе n вершин
-fill(dist, inf)
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+import heapq
+
+dist = [float('inf')] * n
 dist[s] = 0
-for v = 0..(n - 1):
-    q<-- (v, dist[v] + f[v])
-for i = 0..(n - 1):
-    v <-- q
+pq = [(f[s], s)]  # приоритет = dist[v] + f[v]
+visited = [False] * n
+
+while pq:
+    _, v = heapq.heappop(pq)
+    if visited[v]:
+        continue
     if v == t:
-        break # нас интересовало только расстояние до t
-    for u, w in es[v]:
+        break  # нашли расстояние до t
+    visited[v] = True
+    for u, w in adj[v]:
         if dist[u] > dist[v] + w:
             dist[u] = dist[v] + w
-            q.decreaseKey(u, dist[u] + f[u])
+            heapq.heappush(pq, (dist[u] + f[u], u))
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+vector<int> dist(n, INT_MAX);
+dist[s] = 0;
+priority_queue<pair<int,int>, vector<pair<int,int>>, greater<>> pq;
+pq.push({f[s], s});
+vector<bool> visited(n, false);
+
+while (!pq.empty()) {
+    auto [_, v] = pq.top(); pq.pop();
+    if (visited[v]) continue;
+    if (v == t) break; // нашли расстояние до t
+    visited[v] = true;
+    for (auto [u, w] : adj[v]) {
+        if (dist[u] > dist[v] + w) {
+            dist[u] = dist[v] + w;
+            pq.push({dist[u] + f[u], u});
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Интуитивно это можно понимать так: алгоритм пытается в первую очередь рассматривать вершины, которые больше похожи на лежащие на кратчайшем пути от $s$ к $t$. Поскольку $d i s t[v]+f[v]$ - это оценка на длину пути из $s$ в $t$, проходящего через $v$, логично сначала рассматривать вершины, для которых эта величина минимальна.
 
@@ -282,14 +473,32 @@ $$
 
 Пусть в графе нет (достижимых из $s$ ) отрицательных циклов. Тогда для любой достижимой из $s$ вершины $v$ найдётся простой (без повторяющихся вершин) кратчайший путь из $s$ в $v$. Если бы это было не так, то путь содержал бы цикл. Тогда, удалив цикл из пути, мы не увеличим длину пути. Значит, достаточно искать простые кратчайшие пути из $s$ в другие вершины. С этой задачей справляется следующий алгоритм:
 
-```py
-fill(dist, inf)
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+dist = [float('inf')] * n
 dist[s] = 0
-for k = 0..(n - 2):
-    for v = 0..(n - 1):
-        for u, w in es[v]:
+for k in range(n - 1):
+    for v in range(n):
+        for u, w in adj[v]:
             dist[u] = min(dist[u], dist[v] + w)
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+vector<int> dist(n, INT_MAX);
+dist[s] = 0;
+for (int k = 0; k < n - 1; k++) {
+    for (int v = 0; v < n; v++) {
+        for (auto [u, w] : adj[v]) {
+            if (dist[v] != INT_MAX)
+                dist[u] = min(dist[u], dist[v] + w);
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Всё, что делает этот алгоритм --- $|V|-1$ раз проводит релаксацию всех рёбер графа. Почему он найдёт расстояния до всех вершин корректно? Пусть $Q$ - любой простой путь из $s$ в $v$; пусть он состоит из рёбер $e_{1}, \ldots, e_{k}, k \leqslant|V|-1$. На первом шаге внешнего цикла алгоритм проведёт релаксацию ребра $e_{1}$, на втором шаге - ребра $e_{2}, \ldots$, на $k$-м - ребра $e_{k}$. Тогда после $k$ шагов внешнего цикла
 
@@ -351,34 +560,88 @@ $$
 Вернёмся к графам без отрицательных циклов. Алгоритм Форда-Беллмана можно соптимизировать, избавившись от повторного выполнения одних и тех же действий. При этом получается алгоритм, который называют алгоритмом Форда-Беллмана с очередью; также он известен как SPFA (Shortest path faster algorithm; Moore, 1959). Он имеет ту же теоретическую оценку времени, что и алгоритм Форда-Беллмана, но на практике часто работает намного быстрее.
 
 Первая идея - на $k$-м шаге алгоритма нет смысла проводить релаксацию исходящих из $v$ рёбер, если $\operatorname{dist}[v]$ не поменялось с $(k-1)$-го шага. Обозначим за $B_{k}$ множество таких вершин $v$, что dist $[v]$ уменьшилось в течение ( $k-1$ )-го шага; $B_{0}=\{s\}$. На $k$-м шаге алгоритма достаточно произвести релаксацию рёбер, исходящих из вершин множества $B_{k}$.
-```py
-fill(dist, inf)
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+dist = [float('inf')] * n
 dist[s] = 0
-B[0] <-- s
-for k = 0..(n - 2):
+B = [set() for _ in range(n)]
+B[0].add(s)
+for k in range(n - 1):
     for v in B[k]:
-        for u, w in es[v]:
+        for u, w in adj[v]:
             if dist[u] > dist[v] + w:
                 dist[u] = dist[v] + w
-                if u not in B[k + 1]:
-                    B[k+1] <-- u
+                B[k + 1].add(u)
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+vector<int> dist(n, INT_MAX);
+dist[s] = 0;
+vector<set<int>> B(n);
+B[0].insert(s);
+for (int k = 0; k < n - 1; k++) {
+    for (int v : B[k]) {
+        for (auto [u, w] : adj[v]) {
+            if (dist[u] > dist[v] + w) {
+                dist[u] = dist[v] + w;
+                B[k + 1].insert(u);
+            }
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Получившийся алгоритм очень похож на версию алгоритма поиска в ширину, в которой множества $A_{k}=\left\{v \in V: d_{v}=k\right\}$ строились явно. Как и в том случае, множества $B_{k}$ можно моделировать с помощью очереди: будем складывать вершину $v$ в очередь, если $d i s t[v]$ уменьшилось, и $v$ в данный момент ещё не лежит в очереди. Такой алгоритм с очередью эквивалентен предыдущему алгоритму, но с ещё одной оптимизацией: теперь мы не будем класть вершину $v$ в $B_{k+1}$, если с момента её обработки в $B_{k}$ до конца обработки вершин из $B_{k} \operatorname{dist}[v]$ не менялось. Эту оптимизацию можно сделать, так как релаксация рёбер, исходящих из такой вершины $v$, на ( $k+1$ )-м шаге бессмысленна, поскольку значение dist $[v]$ не поменялось с предыдущей релаксации тех же рёбер.
 
-```py
-fill(dist, inf)
-fill(inQueue, False)
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+from collections import deque
+
+dist = [float('inf')] * n
+in_queue = [False] * n
 dist[s] = 0
-q <-- s, inQueue[s] = True
-while not q.empty():
-    q --> v, inQueue[v] = False
-    for u, w in es[v]:
+q = deque([s])
+in_queue[s] = True
+while q:
+    v = q.popleft()
+    in_queue[v] = False
+    for u, w in adj[v]:
         if dist[u] > dist[v] + w:
             dist[u] = dist[v] + w
-            if not inQueue[u]:
-            q <-- u, inQueue[u] = True
+            if not in_queue[u]:
+                q.append(u)
+                in_queue[u] = True
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+vector<int> dist(n, INT_MAX);
+vector<bool> inQueue(n, false);
+dist[s] = 0;
+queue<int> q;
+q.push(s);
+inQueue[s] = true;
+while (!q.empty()) {
+    int v = q.front(); q.pop();
+    inQueue[v] = false;
+    for (auto [u, w] : adj[v]) {
+        if (dist[u] > dist[v] + w) {
+            dist[u] = dist[v] + w;
+            if (!inQueue[u]) {
+                q.push(u);
+                inQueue[u] = true;
+            }
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Время работы получившегося алгоритма можно оценить как $O(V E)$, поскольку он делает не больше релаксаций рёбер, чем делал обычный алгоритм Форда-Беллмана.
 
@@ -398,14 +661,27 @@ $$
 
 Получаем алгоритм со временем работы $O\left(V^{3}\right)$, использующий $O\left(V^{3}\right)$ дополнительной памяти. На самом деле можно ограничиться $O\left(V^{2}\right)$ памяти: для любого $k$ будем использовать одно и то же $\operatorname{dist}[i, j]$ вместо $\operatorname{dist}[k, i, j]$.
 
-```py
-# dist[i, j] равняется минимальному весу ребра из i в j или inf, если рёбер из i в ј нет
-# dist[i, i] = 0
-for k = 0..(n - 1):
-    for i = 0..(n - 1):
-        for j = 0..(n - 1):
-            dist[i, j] = min(dist[i, j], dist[i, k] + dist[k, j])
+{{< tabs >}}
+{{% tab color="blue" title="python" %}}
+```python
+# dist[i][j] = вес мин. ребра из i в j, или float('inf'); dist[i][i] = 0
+for k in range(n):
+    for i in range(n):
+        for j in range(n):
+            dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
 ```
+{{% /tab %}}
+{{% tab color="blue" title="c++" %}}
+```cpp
+// dist[i][j] = вес мин. ребра из i в j, или INT_MAX; dist[i][i] = 0
+for (int k = 0; k < n; k++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            if (dist[i][k] != INT_MAX && dist[k][j] != INT_MAX)
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Почему алгоритм с двумерным массивом вместо трёхмерного остаётся корректным? В любой момент $\operatorname{dist}[i, j]$ - это длина какого-то пути из $i$ в $j$; при этом после $k$ итераций внешнего цикла $\operatorname{dist}[i, j]$ не больше длины любого пути из $i$ в $j$, промежуточные вершины в котором имеют номера меньше $k$ (это было верно для $\operatorname{dist}[k, i, j]$, a $\operatorname{dist}[i, j] \leqslant \operatorname{dist}[k, i, j]$ после $k$ итераций). Значит, после $n$ итераций $\operatorname{dist}[i, j]$ - это расстояние от $i$ до $j$.
 
