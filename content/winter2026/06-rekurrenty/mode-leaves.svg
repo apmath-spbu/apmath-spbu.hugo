@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="332" height="172" viewBox="-26 -26 332 172" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="332" height="172" rx="16" fill="#0E1524"/>
+        <g>
+          <rect x="98" y="14" width="84" height="20" rx="5" fill="#FEBC2E" opacity="0.3"/>
+          <rect x="75" y="44" width="130" height="20" rx="5" fill="#FEBC2E" opacity="0.55"/>
+          <rect x="40" y="74" width="200" height="20" rx="5" fill="#FEBC2E" opacity="0.95"/>
+          <text x="140" y="112" fill="#8FA0C0" font-size="12" text-anchor="middle">работа нарастает к листьям</text>
+        </g>
+      </svg>
