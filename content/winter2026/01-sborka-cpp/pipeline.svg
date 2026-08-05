@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1208" height="502" viewBox="-26 -26 1208 502" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="1208" height="502" rx="16" fill="#0E1524"/>
+    <defs>
+      <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0,0 L10,5 L0,10 z" fill="#4FC3F7"/>
+      </marker>
+    </defs>
+    <g text-anchor="middle">
+      <!-- row of stages -->
+      <!-- file: main.cpp -->
+      <g>
+        <path d="M20,150 h96 l16,16 v74 h-112 z" fill="#16203A" stroke="#26355C"/>
+        <text x="76" y="192" fill="#E8EDF7" class="mono" font-size="14">main.cpp</text>
+        <text x="76" y="212" fill="#8FA0C0" font-size="12">C++ код</text>
+      </g>
+      <line x1="132" y1="195" x2="172" y2="195" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a2)"/>
+      <!-- stage 1 -->
+      <rect x="172" y="140" width="176" height="110" rx="14" fill="#12251C" stroke="#37D67A" stroke-width="1.6"/>
+      <text x="260" y="176" fill="#37D67A" font-weight="bold" font-size="17">Препроцессор</text>
+      <text x="260" y="200" fill="#C9D6EE" font-size="13">#include, #define,</text>
+      <text x="260" y="218" fill="#C9D6EE" font-size="13">#ifdef — текстовые</text>
+      <text x="260" y="236" fill="#C9D6EE" font-size="13">подстановки</text>
+      <line x1="348" y1="195" x2="388" y2="195" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a2)"/>
+      <g>
+        <path d="M388,150 h84 l16,16 v74 h-100 z" fill="#16203A" stroke="#26355C"/>
+        <text x="438" y="192" fill="#E8EDF7" class="mono" font-size="14">main.i</text>
+        <text x="438" y="212" fill="#8FA0C0" font-size="12">чистый C++</text>
+      </g>
+      <line x1="488" y1="195" x2="528" y2="195" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a2)"/>
+      <!-- stage 2 -->
+      <rect x="528" y="140" width="176" height="110" rx="14" fill="#10263A" stroke="#4FC3F7" stroke-width="1.6"/>
+      <text x="616" y="176" fill="#4FC3F7" font-weight="bold" font-size="17">Компилятор</text>
+      <text x="616" y="200" fill="#C9D6EE" font-size="13">синтаксис → AST,</text>
+      <text x="616" y="218" fill="#C9D6EE" font-size="13">проверка типов,</text>
+      <text x="616" y="236" fill="#C9D6EE" font-size="13">оптимизации</text>
+      <line x1="704" y1="195" x2="744" y2="195" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a2)"/>
+      <g>
+        <path d="M744,150 h84 l16,16 v74 h-100 z" fill="#16203A" stroke="#26355C"/>
+        <text x="794" y="192" fill="#E8EDF7" class="mono" font-size="14">main.s</text>
+        <text x="794" y="212" fill="#8FA0C0" font-size="12">ассемблер</text>
+      </g>
+      <line x1="844" y1="195" x2="884" y2="195" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a2)"/>
+      <!-- stage 3 -->
+      <rect x="884" y="140" width="160" height="110" rx="14" fill="#2A2312" stroke="#FEBC2E" stroke-width="1.6"/>
+      <text x="964" y="176" fill="#FEBC2E" font-weight="bold" font-size="17">Ассемблер</text>
+      <text x="964" y="200" fill="#C9D6EE" font-size="13">мнемоники →</text>
+      <text x="964" y="218" fill="#C9D6EE" font-size="13">машинные коды</text>
+      <line x1="964" y1="250" x2="964" y2="292" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a2)"/>
+      <g>
+        <path d="M914,292 h84 l16,16 v58 h-100 z" fill="#16203A" stroke="#26355C"/>
+        <text x="964" y="326" fill="#E8EDF7" class="mono" font-size="14">main.o</text>
+        <text x="964" y="344" fill="#8FA0C0" font-size="12">объектный файл</text>
+      </g>
+      <line x1="914" y1="330" x2="654" y2="330" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a2)"/>
+      <!-- libs -->
+      <g>
+        <path d="M700,392 h174 l16,16 v42 h-190 z" fill="#16203A" stroke="#26355C"/>
+        <text x="795" y="428" fill="#8FA0C0" font-size="12.5">libc++, libm, другие .o…</text>
+      </g>
+      <!-- stage 4 -->
+      <rect x="478" y="286" width="176" height="90" rx="14" fill="#2A1620" stroke="#FF5F57" stroke-width="1.6"/>
+      <text x="566" y="318" fill="#FF5F57" font-weight="bold" font-size="17">Линковщик</text>
+      <text x="566" y="342" fill="#C9D6EE" font-size="13">сшивает .o и</text>
+      <text x="566" y="360" fill="#C9D6EE" font-size="13">библиотеки</text>
+      <line x1="712" y1="392" x2="648" y2="372" stroke="#8FA0C0" stroke-width="1.4" marker-end="url(#a2)"/>
+      <line x1="478" y1="330" x2="400" y2="330" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a2)"/>
+      <rect x="200" y="296" width="200" height="70" rx="14" fill="#1A2440" stroke="#4FC3F7" stroke-width="2"/>
+      <text x="300" y="326" fill="#FFFFFF" font-weight="bold" font-size="16">a.out / main.exe</text>
+      <text x="300" y="348" fill="#8FA0C0" font-size="12.5">исполняемый файл</text>
+      <!-- flags -->
+      <g font-size="13" class="mono">
+        <text x="260" y="120" fill="#37D67A">-E → остановиться тут</text>
+        <text x="616" y="120" fill="#4FC3F7">-S → получить .s</text>
+        <text x="964" y="120" fill="#FEBC2E">-c → получить .o</text>
+      </g>
+    </g>
+  </svg>

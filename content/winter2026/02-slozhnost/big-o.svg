@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="532" height="352" viewBox="-26 -26 532 352" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="532" height="352" rx="16" fill="#0E1524"/>
+        <defs>
+          <marker id="ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#8FA0C0"/>
+          </marker>
+        </defs>
+        <!-- axes -->
+        <line x1="40" y1="260" x2="460" y2="260" stroke="#8FA0C0" stroke-width="1.4" marker-end="url(#ax)"/>
+        <line x1="40" y1="260" x2="40" y2="20" stroke="#8FA0C0" stroke-width="1.4" marker-end="url(#ax)"/>
+        <text x="450" y="282" fill="#8FA0C0" font-size="14">n</text>
+        <!-- n0 -->
+        <line x1="170" y1="260" x2="170" y2="40" stroke="#5C6B8A" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <text x="170" y="282" fill="#E8EDF7" font-size="15" text-anchor="middle">n₀</text>
+        <!-- f(n): волнистая, ниже после n0 -->
+        <path d="M40,220 C80,140 110,240 170,185 C240,160 320,150 450,95" fill="none" stroke="#4FC3F7" stroke-width="2.4"/>
+        <text x="420" y="85" fill="#4FC3F7" font-size="15">f(n)</text>
+        <!-- c*g(n): выше после n0 -->
+        <path d="M40,250 C120,230 180,170 260,120 C330,78 390,50 450,28" fill="none" stroke="#37D67A" stroke-width="2.4"/>
+        <text x="392" y="26" fill="#37D67A" font-size="15">c · g(n)</text>
+        <!-- зона неважного -->
+        <rect x="41" y="21" width="128" height="238" fill="#FF5F57" opacity="0.07"/>
+        <text x="105" y="45" fill="#FF8A80" font-size="12.5" text-anchor="middle">здесь — как угодно</text>
+      </svg>

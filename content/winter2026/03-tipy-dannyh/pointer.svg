@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="532" height="222" viewBox="-26 -26 532 222" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="532" height="222" rx="16" fill="#0E1524"/>
+        <defs>
+          <marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#4FC3F7"/>
+          </marker>
+        </defs>
+        <g font-size="14" class="mono" text-anchor="middle">
+          <rect x="40" y="50" width="150" height="56" rx="10" fill="#10263A" stroke="#4FC3F7" stroke-width="1.6"/>
+          <text x="115" y="74" fill="#E8EDF7">p</text>
+          <text x="115" y="94" fill="#8FA0C0" font-size="12">0x7ffee3b0</text>
+          <rect x="300" y="50" width="150" height="56" rx="10" fill="#12251C" stroke="#37D67A" stroke-width="1.6"/>
+          <text x="375" y="74" fill="#E8EDF7">x = 7</text>
+          <text x="375" y="94" fill="#8FA0C0" font-size="12">адрес 0x7ffee3b0</text>
+          <path d="M190,78 C240,78 250,78 296,78" fill="none" stroke="#4FC3F7" stroke-width="2" marker-end="url(#ap)"/>
+          <text x="243" y="64" fill="#4FC3F7" font-size="13" font-family="PT Sans">*p</text>
+          <text x="245" y="140" fill="#8FA0C0" font-size="13" font-family="PT Sans">указатель «смотрит» на ячейку; сам живёт в памяти как обычная переменная</text>
+        </g>
+      </svg>

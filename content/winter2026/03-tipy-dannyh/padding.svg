@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="572" height="202" viewBox="-26 -26 572 202" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="572" height="202" rx="16" fill="#0E1524"/>
+        <g font-size="13" class="mono" text-anchor="middle">
+          <text x="46" y="34" fill="#8FA0C0" font-family="PT Sans" text-anchor="start">Bad:</text>
+          <rect x="100" y="16" width="32" height="28" fill="#10263A" stroke="#4FC3F7"/><text x="116" y="35" fill="#E8EDF7">a</text>
+          <rect x="132" y="16" width="96" height="28" fill="#2A1620" stroke="#FF5F57"/><text x="180" y="35" fill="#FF8A80">пусто ×3</text>
+          <rect x="228" y="16" width="128" height="28" fill="#12251C" stroke="#37D67A"/><text x="292" y="35" fill="#E8EDF7">b b b b</text>
+          <rect x="356" y="16" width="32" height="28" fill="#10263A" stroke="#4FC3F7"/><text x="372" y="35" fill="#E8EDF7">c</text>
+          <rect x="388" y="16" width="96" height="28" fill="#2A1620" stroke="#FF5F57"/><text x="436" y="35" fill="#FF8A80">пусто ×3</text>
+          <text x="46" y="106" fill="#8FA0C0" font-family="PT Sans" text-anchor="start">Good:</text>
+          <rect x="100" y="88" width="128" height="28" fill="#12251C" stroke="#37D67A"/><text x="164" y="107" fill="#E8EDF7">b b b b</text>
+          <rect x="228" y="88" width="32" height="28" fill="#10263A" stroke="#4FC3F7"/><text x="244" y="107" fill="#E8EDF7">a</text>
+          <rect x="260" y="88" width="32" height="28" fill="#10263A" stroke="#4FC3F7"/><text x="276" y="107" fill="#E8EDF7">c</text>
+          <rect x="292" y="88" width="64" height="28" fill="#1A2030" stroke="#31405F" stroke-dasharray="4 3"/><text x="324" y="107" fill="#5C6B8A">×2</text>
+        </g>
+      </svg>

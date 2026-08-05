@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1172" height="302" viewBox="-26 -26 1172 302" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="1172" height="302" rx="16" fill="#0E1524"/>
+    <defs>
+      <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0,0 L10,5 L0,10 z" fill="#4FC3F7"/>
+      </marker>
+    </defs>
+    <g font-size="15" text-anchor="middle">
+      <rect x="40" y="50" width="280" height="120" rx="14" fill="#16203A" stroke="#26355C"/>
+      <text x="180" y="86" fill="#E8EDF7" font-weight="bold">Рабочая папка</text>
+      <text x="180" y="112" fill="#8FA0C0" font-size="13">ваши файлы как есть:</text>
+      <text x="180" y="132" fill="#8FA0C0" font-size="13">правки, черновики, мусор</text>
+      <line x1="320" y1="110" x2="420" y2="110" stroke="#4FC3F7" stroke-width="1.8" marker-end="url(#ag)"/>
+      <text x="370" y="94" fill="#4FC3F7" class="mono" font-size="14">git add</text>
+      <rect x="420" y="50" width="280" height="120" rx="14" fill="#10263A" stroke="#1F4A6B"/>
+      <text x="560" y="86" fill="#E8EDF7" font-weight="bold">Индекс (staging)</text>
+      <text x="560" y="112" fill="#8FA0C0" font-size="13">«корзина» будущего коммита:</text>
+      <text x="560" y="132" fill="#8FA0C0" font-size="13">только то, что вы отобрали</text>
+      <line x1="700" y1="110" x2="800" y2="110" stroke="#4FC3F7" stroke-width="1.8" marker-end="url(#ag)"/>
+      <text x="750" y="94" fill="#4FC3F7" class="mono" font-size="14">git commit</text>
+      <rect x="800" y="50" width="280" height="120" rx="14" fill="#12251C" stroke="#1F4D35"/>
+      <text x="940" y="86" fill="#E8EDF7" font-weight="bold">Репозиторий (.git)</text>
+      <text x="940" y="112" fill="#8FA0C0" font-size="13">цепочка снимков-коммитов,</text>
+      <text x="940" y="132" fill="#8FA0C0" font-size="13">вся история проекта</text>
+      <path d="M940,170 C940,215 250,215 195,174" fill="none" stroke="#8FA0C0" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#ag)"/>
+      <text x="565" y="238" fill="#8FA0C0" font-size="13.5">git checkout / git restore — достать любую версию обратно в рабочую папку</text>
+    </g>
+  </svg>

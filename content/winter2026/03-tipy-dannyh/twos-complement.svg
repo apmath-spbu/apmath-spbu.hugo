@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="612" height="322" viewBox="-26 -26 612 322" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="612" height="322" rx="16" fill="#0E1524"/>
+        <g font-size="14" text-anchor="middle" class="mono">
+          <text x="280" y="24" fill="#8FA0C0" font-size="15" font-family="PT Sans">int8_t (8 бит): значение = −128·b₇ + 64·b₆ + … + 1·b₀</text>
+          <!-- 5 -->
+          <g>
+            <text x="60" y="72" fill="#E8EDF7" font-family="PT Sans" text-anchor="start">5</text>
+            <g>
+              <rect x="120" y="50" width="40" height="34" fill="#141B2E" stroke="#31405F"/><text x="140" y="72" fill="#8FA0C0">0</text>
+              <rect x="160" y="50" width="40" height="34" fill="#141B2E" stroke="#31405F"/><text x="180" y="72" fill="#8FA0C0">0</text>
+              <rect x="200" y="50" width="40" height="34" fill="#141B2E" stroke="#31405F"/><text x="220" y="72" fill="#8FA0C0">0</text>
+              <rect x="240" y="50" width="40" height="34" fill="#141B2E" stroke="#31405F"/><text x="260" y="72" fill="#8FA0C0">0</text>
+              <rect x="280" y="50" width="40" height="34" fill="#141B2E" stroke="#31405F"/><text x="300" y="72" fill="#8FA0C0">0</text>
+              <rect x="320" y="50" width="40" height="34" fill="#10263A" stroke="#4FC3F7"/><text x="340" y="72" fill="#E8EDF7">1</text>
+              <rect x="360" y="50" width="40" height="34" fill="#141B2E" stroke="#31405F"/><text x="380" y="72" fill="#8FA0C0">0</text>
+              <rect x="400" y="50" width="40" height="34" fill="#10263A" stroke="#4FC3F7"/><text x="420" y="72" fill="#E8EDF7">1</text>
+            </g>
+          </g>
+          <!-- инверсия -->
+          <text x="280" y="118" fill="#8FA0C0" font-family="PT Sans">инвертировать все биты (~x) и прибавить 1:</text>
+          <!-- -5 -->
+          <g>
+            <text x="60" y="168" fill="#E8EDF7" font-family="PT Sans" text-anchor="start">−5</text>
+            <g>
+              <rect x="120" y="146" width="40" height="34" fill="#2A1620" stroke="#FF5F57"/><text x="140" y="168" fill="#FFB4AE">1</text>
+              <rect x="160" y="146" width="40" height="34" fill="#2A1620" stroke="#FF5F57"/><text x="180" y="168" fill="#FFB4AE">1</text>
+              <rect x="200" y="146" width="40" height="34" fill="#2A1620" stroke="#FF5F57"/><text x="220" y="168" fill="#FFB4AE">1</text>
+              <rect x="240" y="146" width="40" height="34" fill="#2A1620" stroke="#FF5F57"/><text x="260" y="168" fill="#FFB4AE">1</text>
+              <rect x="280" y="146" width="40" height="34" fill="#2A1620" stroke="#FF5F57"/><text x="300" y="168" fill="#FFB4AE">1</text>
+              <rect x="320" y="146" width="40" height="34" fill="#141B2E" stroke="#31405F"/><text x="340" y="168" fill="#8FA0C0">0</text>
+              <rect x="360" y="146" width="40" height="34" fill="#2A1620" stroke="#FF5F57"/><text x="380" y="168" fill="#FFB4AE">1</text>
+              <rect x="400" y="146" width="40" height="34" fill="#2A1620" stroke="#FF5F57"/><text x="420" y="168" fill="#FFB4AE">1</text>
+            </g>
+          </g>
+          <text x="280" y="225" fill="#8FA0C0" font-size="13.5" font-family="PT Sans">проверка: −128 + 64 + 32 + 16 + 8 + 2 + 1 = −5 ✓</text>
+        </g>
+      </svg>

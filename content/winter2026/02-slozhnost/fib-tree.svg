@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1172" height="472" viewBox="-26 -26 1172 472" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="1172" height="472" rx="16" fill="#0E1524"/>
+    <g font-size="15" class="mono" text-anchor="middle">
+      <!-- edges -->
+      <g stroke="#31405F" stroke-width="1.4">
+        <line x1="480" y1="64" x2="300" y2="100"/><line x1="480" y1="64" x2="700" y2="100"/>
+        <line x1="300" y1="134" x2="180" y2="170"/><line x1="300" y1="134" x2="420" y2="170"/>
+        <line x1="700" y1="134" x2="620" y2="170"/><line x1="700" y1="134" x2="800" y2="170"/>
+        <line x1="180" y1="204" x2="110" y2="240"/><line x1="180" y1="204" x2="255" y2="240"/>
+        <line x1="420" y1="204" x2="370" y2="240"/><line x1="420" y1="204" x2="475" y2="240"/>
+        <line x1="620" y1="204" x2="570" y2="240"/><line x1="620" y1="204" x2="675" y2="240"/>
+        <line x1="110" y1="274" x2="60" y2="310"/><line x1="110" y1="274" x2="165" y2="310"/>
+      </g>
+      <!-- level 0 -->
+      <rect x="444" y="30" width="72" height="34" rx="9" fill="#10263A" stroke="#4FC3F7" stroke-width="1.6"/>
+      <text x="480" y="52" fill="#E8EDF7">f(5)</text>
+      <!-- level 1 -->
+      <rect x="264" y="100" width="72" height="34" rx="9" fill="#10263A" stroke="#4FC3F7" stroke-width="1.6"/>
+      <text x="300" y="122" fill="#E8EDF7">f(4)</text>
+      <rect x="664" y="100" width="72" height="34" rx="9" fill="#2A2312" stroke="#FEBC2E" stroke-width="1.6"/>
+      <text x="700" y="122" fill="#FEBC2E">f(3)</text>
+      <!-- level 2 -->
+      <rect x="144" y="170" width="72" height="34" rx="9" fill="#2A2312" stroke="#FEBC2E" stroke-width="1.6"/>
+      <text x="180" y="192" fill="#FEBC2E">f(3)</text>
+      <rect x="384" y="170" width="72" height="34" rx="9" fill="#12251C" stroke="#37D67A" stroke-width="1.6"/>
+      <text x="420" y="192" fill="#37D67A">f(2)</text>
+      <rect x="584" y="170" width="72" height="34" rx="9" fill="#12251C" stroke="#37D67A" stroke-width="1.6"/>
+      <text x="620" y="192" fill="#37D67A">f(2)</text>
+      <rect x="764" y="170" width="72" height="34" rx="9" fill="#141B2E" stroke="#31405F"/>
+      <text x="800" y="192" fill="#8FA0C0">f(1)</text>
+      <!-- level 3 -->
+      <rect x="74" y="240" width="72" height="34" rx="9" fill="#12251C" stroke="#37D67A" stroke-width="1.6"/>
+      <text x="110" y="262" fill="#37D67A">f(2)</text>
+      <rect x="219" y="240" width="72" height="34" rx="9" fill="#141B2E" stroke="#31405F"/>
+      <text x="255" y="262" fill="#8FA0C0">f(1)</text>
+      <rect x="334" y="240" width="72" height="34" rx="9" fill="#141B2E" stroke="#31405F"/>
+      <text x="370" y="262" fill="#8FA0C0">f(1)</text>
+      <rect x="439" y="240" width="72" height="34" rx="9" fill="#141B2E" stroke="#31405F"/>
+      <text x="475" y="262" fill="#8FA0C0">f(0)</text>
+      <rect x="534" y="240" width="72" height="34" rx="9" fill="#141B2E" stroke="#31405F"/>
+      <text x="570" y="262" fill="#8FA0C0">f(1)</text>
+      <rect x="639" y="240" width="72" height="34" rx="9" fill="#141B2E" stroke="#31405F"/>
+      <text x="675" y="262" fill="#8FA0C0">f(0)</text>
+      <!-- level 4 -->
+      <rect x="24" y="310" width="72" height="34" rx="9" fill="#141B2E" stroke="#31405F"/>
+      <text x="60" y="332" fill="#8FA0C0">f(1)</text>
+      <rect x="129" y="310" width="72" height="34" rx="9" fill="#141B2E" stroke="#31405F"/>
+      <text x="165" y="332" fill="#8FA0C0">f(0)</text>
+    </g>
+    <!-- legend -->
+    <g font-size="15">
+      <rect x="880" y="150" width="222" height="152" rx="12" fill="#16203A" stroke="#26355C"/>
+      <text x="900" y="182" fill="#FEBC2E">f(3) вычислен 2 раза</text>
+      <text x="900" y="210" fill="#37D67A">f(2) — 3 раза</text>
+      <text x="900" y="238" fill="#8FA0C0">f(1) — 5 раз, f(0) — 3 раза</text>
+      <text x="900" y="278" fill="#E8EDF7" font-weight="bold">Итого: 15 вызовов</text>
+    </g>
+  </svg>

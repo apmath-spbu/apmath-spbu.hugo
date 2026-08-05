@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1172" height="292" viewBox="-26 -26 1172 292" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="1172" height="292" rx="16" fill="#0E1524"/>
+    <g font-size="14" text-anchor="middle">
+      <!-- лента -->
+      <g class="mono">
+        <rect x="40"  y="70" width="80" height="52" fill="#141B2E" stroke="#31405F"/>
+        <rect x="120" y="70" width="80" height="52" fill="#141B2E" stroke="#31405F"/>
+        <rect x="200" y="70" width="80" height="52" fill="#10263A" stroke="#4FC3F7" stroke-width="1.6"/>
+        <rect x="280" y="70" width="80" height="52" fill="#10263A" stroke="#4FC3F7" stroke-width="1.6"/>
+        <rect x="360" y="70" width="80" height="52" fill="#10263A" stroke="#4FC3F7" stroke-width="1.6"/>
+        <rect x="440" y="70" width="80" height="52" fill="#10263A" stroke="#4FC3F7" stroke-width="1.6"/>
+        <rect x="520" y="70" width="80" height="52" fill="#2A2312" stroke="#FEBC2E" stroke-width="1.6"/>
+        <rect x="600" y="70" width="80" height="52" fill="#141B2E" stroke="#31405F"/>
+        <rect x="680" y="70" width="80" height="52" fill="#141B2E" stroke="#31405F"/>
+        <rect x="760" y="70" width="80" height="52" fill="#141B2E" stroke="#31405F"/>
+        <text x="80"  y="102" fill="#5C6B8A">…</text>
+        <text x="240" y="102" fill="#E8EDF7">2A</text>
+        <text x="320" y="102" fill="#E8EDF7">00</text>
+        <text x="400" y="102" fill="#E8EDF7">00</text>
+        <text x="480" y="102" fill="#E8EDF7">00</text>
+        <text x="560" y="102" fill="#E8EDF7">41</text>
+        <text x="800" y="102" fill="#5C6B8A">…</text>
+        <!-- адреса -->
+        <text x="240" y="145" fill="#8FA0C0" font-size="12">0x1000</text>
+        <text x="320" y="145" fill="#8FA0C0" font-size="12">0x1001</text>
+        <text x="400" y="145" fill="#8FA0C0" font-size="12">0x1002</text>
+        <text x="480" y="145" fill="#8FA0C0" font-size="12">0x1003</text>
+        <text x="560" y="145" fill="#8FA0C0" font-size="12">0x1004</text>
+      </g>
+      <!-- аннотации -->
+      <path d="M200,60 h320" stroke="#4FC3F7" stroke-width="1.5" fill="none"/>
+      <path d="M200,60 v8 M520,60 v8" stroke="#4FC3F7" stroke-width="1.5"/>
+      <text x="360" y="44" fill="#4FC3F7" font-size="15">int x = 42;  (4 байта, little-endian)</text>
+      <text x="560" y="185" fill="#FEBC2E" font-size="15">char c = 'A';  (1 байт)</text>
+      <line x1="560" y1="168" x2="560" y2="128" stroke="#FEBC2E" stroke-width="1.4"/>
+    </g>
+  </svg>

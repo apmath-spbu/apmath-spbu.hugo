@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1172" height="262" viewBox="-26 -26 1172 262" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="1172" height="262" rx="16" fill="#0E1524"/>
+    <g font-size="14" text-anchor="middle">
+      <text x="560" y="20" fill="#8FA0C0" font-size="15">double (64 бита) = знак · мантисса · 2^(порядок)</text>
+      <!-- sign -->
+      <rect x="60" y="40" width="52" height="56" fill="#2A1620" stroke="#FF5F57" stroke-width="1.6"/>
+      <text x="86" y="74" fill="#FFB4AE" class="mono">s</text>
+      <text x="86" y="120" fill="#FF8A80" font-size="13">знак</text>
+      <text x="86" y="138" fill="#8FA0C0" font-size="12.5">1 бит</text>
+      <!-- exponent -->
+      <rect x="112" y="40" width="220" height="56" fill="#2A2312" stroke="#FEBC2E" stroke-width="1.6"/>
+      <text x="222" y="74" fill="#FEBC2E" class="mono">e<tspan baseline-shift="sub" font-size="10">10</tspan> … e<tspan baseline-shift="sub" font-size="10">0</tspan></text>
+      <text x="222" y="120" fill="#FEBC2E" font-size="13">порядок (экспонента)</text>
+      <text x="222" y="138" fill="#8FA0C0" font-size="12.5">11 бит, смещение +1023</text>
+      <!-- mantissa -->
+      <rect x="332" y="40" width="728" height="56" fill="#10263A" stroke="#4FC3F7" stroke-width="1.6"/>
+      <text x="696" y="74" fill="#AFE6FF" class="mono">m<tspan baseline-shift="sub" font-size="10">51</tspan> … m<tspan baseline-shift="sub" font-size="10">0</tspan></text>
+      <text x="696" y="120" fill="#4FC3F7" font-size="13">мантисса — дробная часть после скрытой единицы</text>
+      <text x="696" y="138" fill="#8FA0C0" font-size="12.5">52 бита ≈ 15–16 десятичных цифр точности</text>
+      <text x="560" y="185" fill="#E8EDF7" font-size="16">значение = (−1)ˢ · 1.m<tspan baseline-shift="sub" font-size="10">51</tspan>m<tspan baseline-shift="sub" font-size="10">50</tspan>…m<tspan baseline-shift="sub" font-size="10">0</tspan> · 2^(e − 1023)</text>
+    </g>
+  </svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="522" height="172" viewBox="-26 -26 522 172" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="522" height="172" rx="16" fill="#0E1524"/>
+        <g font-size="14" class="mono" text-anchor="middle">
+          <rect x="30" y="30" width="80" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="70" y="55" fill="#E8EDF7">10</text>
+          <rect x="110" y="30" width="80" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="150" y="55" fill="#E8EDF7">20</text>
+          <rect x="190" y="30" width="80" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="230" y="55" fill="#E8EDF7">30</text>
+          <rect x="270" y="30" width="80" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="310" y="55" fill="#E8EDF7">40</text>
+          <rect x="350" y="30" width="80" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="390" y="55" fill="#E8EDF7">50</text>
+          <text x="70" y="92" fill="#8FA0C0" font-size="12">a+0</text>
+          <text x="150" y="92" fill="#8FA0C0" font-size="12">a+1</text>
+          <text x="230" y="92" fill="#8FA0C0" font-size="12">a+2</text>
+          <text x="310" y="92" fill="#8FA0C0" font-size="12">a+3</text>
+          <text x="390" y="92" fill="#8FA0C0" font-size="12">a+4</text>
+          <text x="235" y="18" fill="#8FA0C0" font-size="12.5" font-family="PT Sans">непрерывный блок, элементы подряд</text>
+        </g>
+      </svg>

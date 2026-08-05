@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1182" height="202" viewBox="-26 -26 1182 202" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="1182" height="202" rx="16" fill="#0E1524"/>
+    <defs>
+      <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0,0 L10,5 L0,10 z" fill="#4FC3F7"/>
+      </marker>
+    </defs>
+    <g text-anchor="middle" font-size="14">
+      <rect x="10" y="30" width="200" height="90" rx="12" fill="#16203A" stroke="#26355C"/>
+      <text x="110" y="62" fill="#E8EDF7" font-weight="bold">Фронтенд</text>
+      <text x="110" y="84" fill="#8FA0C0" font-size="12.5">лексер → парсер → AST,</text>
+      <text x="110" y="101" fill="#8FA0C0" font-size="12.5">проверка типов, ошибки</text>
+      <line x1="210" y1="75" x2="255" y2="75" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a3)"/>
+      <rect x="255" y="30" width="230" height="90" rx="12" fill="#16203A" stroke="#26355C"/>
+      <text x="370" y="62" fill="#E8EDF7" font-weight="bold">Оптимизатор</text>
+      <text x="370" y="84" fill="#8FA0C0" font-size="12.5">inlining, свёртка констант,</text>
+      <text x="370" y="101" fill="#8FA0C0" font-size="12.5">удаление мёртвого кода…</text>
+      <line x1="485" y1="75" x2="530" y2="75" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a3)"/>
+      <rect x="530" y="30" width="210" height="90" rx="12" fill="#16203A" stroke="#26355C"/>
+      <text x="635" y="62" fill="#E8EDF7" font-weight="bold">Бэкенд</text>
+      <text x="635" y="84" fill="#8FA0C0" font-size="12.5">выбор инструкций,</text>
+      <text x="635" y="101" fill="#8FA0C0" font-size="12.5">регистры → .s под x86/ARM</text>
+      <rect x="790" y="18" width="330" height="114" rx="12" fill="#10263A" stroke="#1F4A6B"/>
+      <text x="955" y="44" fill="#4FC3F7" font-weight="bold" font-size="15">Уровни оптимизации</text>
+      <g font-size="13" text-anchor="start" class="mono">
+        <text x="812" y="68" fill="#C9D6EE">-O0  без оптимизаций (отладка)</text>
+        <text x="812" y="88" fill="#C9D6EE">-O2  стандарт для релиза</text>
+        <text x="812" y="108" fill="#C9D6EE">-O3 / -Os  агрессивнее / меньше</text>
+      </g>
+    </g>
+  </svg>

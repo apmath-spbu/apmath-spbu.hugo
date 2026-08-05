@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="672" height="432" viewBox="-26 -26 672 432" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="672" height="432" rx="16" fill="#0E1524"/>
+        <defs>
+          <marker id="ax2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#8FA0C0"/>
+          </marker>
+        </defs>
+        <line x1="50" y1="340" x2="600" y2="340" stroke="#8FA0C0" stroke-width="1.4" marker-end="url(#ax2)"/>
+        <line x1="50" y1="340" x2="50" y2="20" stroke="#8FA0C0" stroke-width="1.4" marker-end="url(#ax2)"/>
+        <text x="588" y="362" fill="#8FA0C0" font-size="14">n</text>
+        <text x="66" y="32" fill="#8FA0C0" font-size="14" text-anchor="start">операций</text>
+        <!-- curves -->
+        <path d="M50,337 L590,329" stroke="#5C6B8A" stroke-width="2"/>
+        <text x="545" y="320" fill="#5C6B8A" font-size="14">1</text>
+        <path d="M50,340 C150,320 350,310 590,305" fill="none" stroke="#37D67A" stroke-width="2.2"/>
+        <text x="545" y="296" fill="#37D67A" font-size="14">log n</text>
+        <path d="M50,340 C200,300 400,275 590,255" fill="none" stroke="#82AAFF" stroke-width="2.2"/>
+        <text x="548" y="245" fill="#82AAFF" font-size="14">√n</text>
+        <path d="M50,340 L590,190" stroke="#4FC3F7" stroke-width="2.2"/>
+        <text x="556" y="180" fill="#4FC3F7" font-size="14">n</text>
+        <path d="M50,340 C230,290 440,190 590,105" fill="none" stroke="#C792EA" stroke-width="2.2"/>
+        <text x="510" y="100" fill="#C792EA" font-size="14">n log n</text>
+        <path d="M50,340 C220,330 360,220 445,25" fill="none" stroke="#FEBC2E" stroke-width="2.2"/>
+        <text x="452" y="40" fill="#FEBC2E" font-size="14">n²</text>
+        <path d="M50,340 C160,336 240,260 278,25" fill="none" stroke="#F78C6C" stroke-width="2.2"/>
+        <text x="286" y="40" fill="#F78C6C" font-size="14">2<tspan baseline-shift="super" font-size="10">n</tspan></text>
+        <path d="M50,340 C110,338 160,250 180,25" fill="none" stroke="#FF5F57" stroke-width="2.2"/>
+        <text x="150" y="40" fill="#FF5F57" font-size="14">n!</text>
+      </svg>

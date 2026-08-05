@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="312" viewBox="-26 -26 432 312" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="432" height="312" rx="16" fill="#0E1524"/>
+        <defs>
+          <marker id="a6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#8FA0C0"/>
+          </marker>
+        </defs>
+        <g text-anchor="middle" font-size="14" class="mono">
+          <rect x="115" y="10" width="150" height="44" rx="9" fill="#16203A" stroke="#26355C"/>
+          <text x="190" y="37" fill="#E8EDF7">main.cpp</text>
+          <line x1="150" y1="54" x2="90" y2="100" stroke="#8FA0C0" stroke-width="1.5" marker-end="url(#a6)"/>
+          <line x1="230" y1="54" x2="290" y2="100" stroke="#8FA0C0" stroke-width="1.5" marker-end="url(#a6)"/>
+          <rect x="15" y="100" width="150" height="44" rx="9" fill="#16203A" stroke="#26355C"/>
+          <text x="90" y="127" fill="#E8EDF7">matrix.h</text>
+          <rect x="215" y="100" width="150" height="44" rx="9" fill="#16203A" stroke="#26355C"/>
+          <text x="290" y="127" fill="#E8EDF7">vector.h</text>
+          <line x1="105" y1="144" x2="165" y2="192" stroke="#FF5F57" stroke-width="1.7" marker-end="url(#a6)"/>
+          <line x1="275" y1="144" x2="215" y2="192" stroke="#FF5F57" stroke-width="1.7" marker-end="url(#a6)"/>
+          <rect x="115" y="192" width="150" height="44" rx="9" fill="#2A1620" stroke="#FF5F57" stroke-width="1.7"/>
+          <text x="190" y="219" fill="#FFB4AE">point.h ×2!</text>
+        </g>
+      </svg>
