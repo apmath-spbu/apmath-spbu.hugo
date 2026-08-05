@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="522" height="452" viewBox="-26 -26 522 452" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="522" height="452" rx="16" fill="#0E1524"/>
+        <defs>
+          <marker id="a51" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#8FA0C0"/>
+          </marker>
+        </defs>
+        <g font-size="14" text-anchor="middle">
+          <text x="130" y="26" fill="#8FA0C0" font-size="13">адреса ↓ — стек растёт вниз</text>
+          <!-- main -->
+          <rect x="40" y="40" width="260" height="64" rx="10" fill="#16203A" stroke="#26355C"/>
+          <text x="170" y="64" fill="#E8EDF7" class="mono" font-size="13">main()</text>
+          <text x="170" y="86" fill="#8FA0C0" font-size="12">локальная r · адрес возврата в ОС</text>
+          <!-- gcd 1 -->
+          <rect x="40" y="112" width="260" height="64" rx="10" fill="#10263A" stroke="#1F4A6B"/>
+          <text x="170" y="136" fill="#E8EDF7" class="mono" font-size="13">gcd(1071, 462)</text>
+          <text x="170" y="158" fill="#8FA0C0" font-size="12">a=1071 b=462 · вернуться в main</text>
+          <!-- gcd 2 -->
+          <rect x="40" y="184" width="260" height="64" rx="10" fill="#10263A" stroke="#1F4A6B"/>
+          <text x="170" y="208" fill="#E8EDF7" class="mono" font-size="13">gcd(462, 147)</text>
+          <text x="170" y="230" fill="#8FA0C0" font-size="12">a=462 b=147 · вернуться в gcd</text>
+          <!-- gcd 3 -->
+          <rect x="40" y="256" width="260" height="64" rx="10" fill="#12251C" stroke="#37D67A" stroke-width="1.6"/>
+          <text x="170" y="280" fill="#E8EDF7" class="mono" font-size="13">gcd(147, 21)</text>
+          <text x="170" y="302" fill="#8FA0C0" font-size="12">исполняется сейчас — вершина</text>
+          <line x1="340" y1="288" x2="308" y2="288" stroke="#37D67A" stroke-width="1.6" marker-end="url(#a51)"/>
+          <text x="392" y="292" fill="#37D67A" font-size="12.5">stack pointer</text>
+          <text x="170" y="352" fill="#5C6B8A" font-size="12.5">↓ сюда ляжет кадр gcd(21, 0)</text>
+          <text x="170" y="384" fill="#8FA0C0" font-size="12.5">возвраты снимают кадры в обратном порядке</text>
+        </g>
+      </svg>
