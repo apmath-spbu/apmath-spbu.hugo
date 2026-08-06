@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="612" height="382" viewBox="-26 -26 612 382" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="612" height="382" rx="16" fill="#0E1524"/>
+        <defs>
+          <marker id="a71" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#4FC3F7"/>
+          </marker>
+        </defs>
+        <g font-size="13" class="mono" text-anchor="middle">
+          <!-- объект Circle -->
+          <text x="120" y="28" fill="#8FA0C0" font-family="PT Sans" font-size="14">объект Circle</text>
+          <rect x="40" y="40" width="160" height="34" rx="6" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <text x="120" y="62" fill="#4FC3F7">vptr</text>
+          <rect x="40" y="74" width="160" height="34" rx="6" fill="#141B2E" stroke="#31405F"/>
+          <text x="120" y="96" fill="#C9D6EE">r_ = 2.0</text>
+          <!-- объект Rect -->
+          <text x="120" y="160" fill="#8FA0C0" font-family="PT Sans" font-size="14">объект Rect</text>
+          <rect x="40" y="172" width="160" height="34" rx="6" fill="#10263A" stroke="#37D67A" stroke-width="1.5"/>
+          <text x="120" y="194" fill="#37D67A">vptr</text>
+          <rect x="40" y="206" width="160" height="34" rx="6" fill="#141B2E" stroke="#31405F"/>
+          <text x="120" y="228" fill="#C9D6EE">w_ = 3, h_ = 4</text>
+          <!-- vtable Circle -->
+          <text x="430" y="28" fill="#8FA0C0" font-family="PT Sans" font-size="14">vtable Circle (одна на класс)</text>
+          <rect x="330" y="40" width="200" height="30" rx="6" fill="#16203A" stroke="#26355C"/>
+          <text x="430" y="60" fill="#C9D6EE">area → Circle::area</text>
+          <rect x="330" y="70" width="200" height="30" rx="6" fill="#16203A" stroke="#26355C"/>
+          <text x="430" y="90" fill="#C9D6EE">~ → Circle::~Circle</text>
+          <!-- vtable Rect -->
+          <text x="430" y="160" fill="#8FA0C0" font-family="PT Sans" font-size="14">vtable Rect</text>
+          <rect x="330" y="172" width="200" height="30" rx="6" fill="#16203A" stroke="#26355C"/>
+          <text x="430" y="192" fill="#C9D6EE">area → Rect::area</text>
+          <rect x="330" y="202" width="200" height="30" rx="6" fill="#16203A" stroke="#26355C"/>
+          <text x="430" y="222" fill="#C9D6EE">~ → Rect::~Rect</text>
+          <!-- стрелки -->
+          <line x1="200" y1="57" x2="326" y2="57" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a71)"/>
+          <line x1="200" y1="189" x2="326" y2="189" stroke="#37D67A" stroke-width="1.6" marker-end="url(#a71)"/>
+          <text x="280" y="300" fill="#8FA0C0" font-family="PT Sans" font-size="13.5" >p-&gt;area(): объект → vptr → таблица → нужная функция</text>
+        </g>
+      </svg>
