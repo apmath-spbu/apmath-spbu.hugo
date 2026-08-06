@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="612" height="232" viewBox="-26 -26 612 232" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="612" height="232" rx="16" fill="#0E1524"/>
+        <g font-size="13.5" class="mono" text-anchor="middle">
+          <text x="120" y="30" fill="#8FA0C0" font-family="PT Sans" font-size="13">std::string s = "Hello, world"</text>
+          <g>
+            <rect x="30" y="44" width="42" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="51" y="70" fill="#E8EDF7">H</text>
+            <rect x="72" y="44" width="42" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="93" y="70" fill="#E8EDF7">e</text>
+            <rect x="114" y="44" width="42" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="135" y="70" fill="#E8EDF7">l</text>
+            <rect x="156" y="44" width="42" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="177" y="70" fill="#E8EDF7">l</text>
+            <rect x="198" y="44" width="42" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="219" y="70" fill="#E8EDF7">o</text>
+            <rect x="240" y="44" width="42" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="261" y="70" fill="#E8EDF7">,</text>
+            <rect x="282" y="44" width="42" height="40" fill="#10263A" stroke="#4FC3F7"/><text x="303" y="70" fill="#E8EDF7">␣</text>
+            <rect x="324" y="44" width="42" height="40" fill="#12251C" stroke="#37D67A" stroke-width="1.8"/><text x="345" y="70" fill="#37D67A">w</text>
+            <rect x="366" y="44" width="42" height="40" fill="#12251C" stroke="#37D67A" stroke-width="1.8"/><text x="387" y="70" fill="#37D67A">o</text>
+            <rect x="408" y="44" width="42" height="40" fill="#12251C" stroke="#37D67A" stroke-width="1.8"/><text x="429" y="70" fill="#37D67A">r</text>
+            <rect x="450" y="44" width="42" height="40" fill="#12251C" stroke="#37D67A" stroke-width="1.8"/><text x="471" y="70" fill="#37D67A">l</text>
+            <rect x="492" y="44" width="42" height="40" fill="#12251C" stroke="#37D67A" stroke-width="1.8"/><text x="513" y="70" fill="#37D67A">d</text>
+          </g>
+          <path d="M345,96 h168" stroke="#37D67A" stroke-width="1.6"/>
+          <path d="M345,96 v-6 M513,96 v-6" stroke="#37D67A" stroke-width="1.6"/>
+          <text x="428" y="120" fill="#37D67A" font-family="PT Sans" font-size="13">string_view w = {&s[7], 5}</text>
+          <text x="280" y="158" fill="#8FA0C0" font-family="PT Sans" font-size="13">view = указатель + длина; своих символов у него НЕТ</text>
+        </g>
+      </svg>
