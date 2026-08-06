@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="612" height="312" viewBox="-26 -26 612 312" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="612" height="312" rx="16" fill="#0E1524"/>
+        <defs>
+          <marker id="aq" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#FEBC2E"/>
+          </marker>
+        </defs>
+        <g font-size="13.5" class="mono" text-anchor="middle">
+          <!-- in stack -->
+          <text x="140" y="30" fill="#37D67A" font-family="PT Sans" font-size="14">in: сюда push</text>
+          <rect x="90" y="150" width="100" height="32" fill="#10263A" stroke="#4FC3F7"/><text x="140" y="171" fill="#E8EDF7">1</text>
+          <rect x="90" y="115" width="100" height="32" fill="#10263A" stroke="#4FC3F7"/><text x="140" y="136" fill="#E8EDF7">2</text>
+          <rect x="90" y="80" width="100" height="32" fill="#10263A" stroke="#4FC3F7"/><text x="140" y="101" fill="#E8EDF7">3</text>
+          <rect x="90" y="45" width="100" height="32" fill="#12251C" stroke="#37D67A" stroke-width="1.6"/><text x="140" y="66" fill="#37D67A">4 ← push</text>
+          <path d="M84,190 h112" stroke="#31405F" stroke-width="2"/>
+          <!-- переброс -->
+          <path d="M200,110 C280,60 300,60 372,105" fill="none" stroke="#FEBC2E" stroke-width="1.8" marker-end="url(#aq)"/>
+          <text x="286" y="52" fill="#FEBC2E" font-family="PT Sans" font-size="13">out пуст? перелить всё</text>
+          <!-- out stack -->
+          <text x="420" y="30" fill="#4FC3F7" font-family="PT Sans" font-size="14">out: отсюда pop</text>
+          <rect x="370" y="150" width="100" height="32" fill="#10263A" stroke="#4FC3F7"/><text x="420" y="171" fill="#E8EDF7">4</text>
+          <rect x="370" y="115" width="100" height="32" fill="#10263A" stroke="#4FC3F7"/><text x="420" y="136" fill="#E8EDF7">3</text>
+          <rect x="370" y="80" width="100" height="32" fill="#10263A" stroke="#4FC3F7"/><text x="420" y="101" fill="#E8EDF7">2</text>
+          <rect x="370" y="45" width="100" height="32" fill="#2A2312" stroke="#FEBC2E" stroke-width="1.6"/><text x="420" y="66" fill="#FEBC2E">1 → pop</text>
+          <path d="M364,190 h112" stroke="#31405F" stroke-width="2"/>
+          <text x="280" y="232" fill="#8FA0C0" font-family="PT Sans" font-size="13">два переворота = порядок очереди: первым вышел тот, кто первым вошёл</text>
+        </g>
+      </svg>
