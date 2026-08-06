@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="412" height="292" viewBox="-26 -26 412 292" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="412" height="292" rx="16" fill="#0E1524"/>
+        <defs>
+          <marker id="a82" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#37D67A"/>
+          </marker>
+        </defs>
+        <g font-size="14" class="mono" text-anchor="middle">
+          <rect x="110" y="160" width="140" height="38" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <text x="180" y="184" fill="#E8EDF7">7</text>
+          <rect x="110" y="120" width="140" height="38" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <text x="180" y="144" fill="#E8EDF7">2</text>
+          <rect x="110" y="80" width="140" height="38" rx="2" fill="#12251C" stroke="#37D67A" stroke-width="1.7"/>
+          <text x="180" y="104" fill="#37D67A">9 ← top</text>
+          <path d="M40,60 L90,88" stroke="#37D67A" stroke-width="1.6" fill="none" marker-end="url(#a82)"/>
+          <text x="46" y="46" fill="#37D67A" font-size="13" font-family="PT Sans">push</text>
+          <path d="M272,88 L322,60" stroke="#FEBC2E" stroke-width="1.6" fill="none" marker-end="url(#a82)"/>
+          <text x="316" y="46" fill="#FEBC2E" font-size="13" font-family="PT Sans">pop</text>
+          <text x="180" y="228" fill="#8FA0C0" font-size="13" font-family="PT Sans">оба конца операций — верхний: LIFO</text>
+        </g>
+      </svg>

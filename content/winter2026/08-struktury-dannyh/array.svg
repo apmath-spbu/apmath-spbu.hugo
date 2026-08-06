@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="522" height="202" viewBox="-26 -26 522 202" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="522" height="202" rx="16" fill="#0E1524"/>
+        <g font-size="14" class="mono" text-anchor="middle">
+          <rect x="30" y="40" width="70" height="44" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <rect x="100" y="40" width="70" height="44" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <rect x="170" y="40" width="70" height="44" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <rect x="240" y="40" width="70" height="44" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <rect x="310" y="40" width="70" height="44" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <rect x="380" y="40" width="70" height="44" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <text x="65" y="68" fill="#E8EDF7">7</text><text x="135" y="68" fill="#E8EDF7">2</text>
+          <text x="205" y="68" fill="#E8EDF7">9</text><text x="275" y="68" fill="#E8EDF7">4</text>
+          <text x="345" y="68" fill="#E8EDF7">1</text><text x="415" y="68" fill="#E8EDF7">8</text>
+          <text x="240" y="118" fill="#8FA0C0" font-family="PT Sans" font-size="13">один непрерывный блок памяти — сосед лежит рядом</text>
+        </g>
+      </svg>

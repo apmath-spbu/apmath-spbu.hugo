@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="612" height="222" viewBox="-26 -26 612 222" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="612" height="222" rx="16" fill="#0E1524"/>
+        <defs>
+          <marker id="a81" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#4FC3F7"/>
+          </marker>
+        </defs>
+        <g font-size="14" class="mono" text-anchor="middle">
+          <text x="40" y="80" fill="#37D67A" font-size="13">head</text>
+          <line x1="62" y1="76" x2="92" y2="76" stroke="#37D67A" stroke-width="1.6" marker-end="url(#a81)"/>
+          <!-- узел 1 -->
+          <rect x="96" y="52" width="60" height="48" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <rect x="156" y="52" width="34" height="48" fill="#16203A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <text x="126" y="82" fill="#E8EDF7">7</text>
+          <line x1="173" y1="72" x2="235" y2="48" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a81)"/>
+          <!-- узел 2 (визуально в другом месте кучи) -->
+          <rect x="239" y="20" width="60" height="48" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <rect x="299" y="20" width="34" height="48" fill="#16203A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <text x="269" y="50" fill="#E8EDF7">2</text>
+          <line x1="316" y1="44" x2="378" y2="94" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a81)"/>
+          <!-- узел 3 -->
+          <rect x="382" y="82" width="60" height="48" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <rect x="442" y="82" width="34" height="48" fill="#16203A" stroke="#4FC3F7" stroke-width="1.5"/>
+          <text x="412" y="112" fill="#E8EDF7">9</text>
+          <line x1="459" y1="106" x2="516" y2="106" stroke="#4FC3F7" stroke-width="1.6" marker-end="url(#a81)"/>
+          <text x="536" y="111" fill="#8FA0C0">∅</text>
+          <text x="280" y="158" fill="#8FA0C0" font-family="PT Sans" font-size="13">узлы разбросаны по куче; порядок задают указатели next</text>
+        </g>
+      </svg>

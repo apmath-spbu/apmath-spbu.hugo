@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="352" height="232" viewBox="-26 -26 352 232" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="352" height="232" rx="16" fill="#0E1524"/>
+          <g font-size="13" class="mono" text-anchor="middle">
+            <circle cx="150" cy="98" r="62" fill="none" stroke="#31405F" stroke-width="24"/>
+            <circle cx="150" cy="98" r="62" fill="none" stroke="#37D67A" stroke-width="24"
+                    stroke-dasharray="195 390" transform="rotate(-90 150 98)"/>
+            <text x="150" y="14" fill="#FEBC2E" font-family="PT Sans">head →</text>
+            <text x="242" y="103" fill="#37D67A" font-family="PT Sans" text-anchor="start">← tail</text>
+          </g>
+        </svg>
