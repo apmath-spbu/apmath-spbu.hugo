@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1052" height="172" viewBox="-26 -26 1052 172" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="1052" height="172" rx="16" fill="#0E1524"/>
+    <g font-family="Menlo" font-size="14" text-anchor="middle">
+      <rect x="60" y="30" width="440" height="40" fill="#2A1620" stroke="#FF6B6B"/>
+      <rect x="500" y="30" width="440" height="40" fill="#14301F" stroke="#3DDC84"/>
+      <text x="280" y="55" fill="#FF6B6B">f = 0  (ещё нет)</text>
+      <text x="720" y="55" fill="#3DDC84">f = 1  (уже да)</text>
+      <line x1="500" y1="18" x2="500" y2="82" stroke="#FEBC2E" stroke-width="2"/>
+      <text x="500" y="106" fill="#FEBC2E" font-family="PT Sans">искомый порог t</text>
+      <text x="60" y="106" fill="#8FA0C0" font-family="PT Sans" text-anchor="start">f монотонна: единожды став 1, назад не возвращается</text>
+    </g>
+  </svg>

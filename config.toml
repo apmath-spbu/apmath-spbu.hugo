@@ -44,7 +44,12 @@ sectionPagesMenu = "main"
   # disableMermaid = false
   # customMermaidURL = "https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"
   titleSeparator = "::"
-  themeVariant = "green"
+  # Светлая/тёмная тема с переключателем; "auto" следует за системной настройкой.
+  themeVariant = [
+    { identifier = "auto", auto = ["zen-light", "zen-dark"] },
+    { identifier = "zen-light" },
+    { identifier = "zen-dark" },
+  ]
   math = true
   linkicons = true
   defaultContentSort = "weight"

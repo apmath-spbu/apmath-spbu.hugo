@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1112" height="232" viewBox="-26 -26 1112 232" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="1112" height="232" rx="16" fill="#0E1524"/>
+    <defs>
+      <marker id="arr11" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1 L 9 5 L 0 9 z" fill="#8FA0C0"/>
+      </marker>
+    </defs>
+    <g font-family="Menlo" font-size="14">
+      <text x="30" y="52" fill="#4FC3F7">p = new Widget(42)</text>
+      <rect x="250" y="24" width="330" height="44" rx="8" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+      <text x="415" y="46" fill="#E8EDF7" text-anchor="middle" font-family="PT Sans">1. взять sizeof(Widget) байт из кучи</text>
+      <text x="415" y="61" fill="#8FA0C0" text-anchor="middle" font-family="PT Sans" font-size="12">(operator new — родня malloc)</text>
+      <rect x="620" y="24" width="300" height="44" rx="8" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/>
+      <text x="770" y="46" fill="#E8EDF7" text-anchor="middle" font-family="PT Sans">2. запустить конструктор</text>
+      <text x="770" y="61" fill="#8FA0C0" text-anchor="middle" font-family="PT Sans" font-size="12">Widget(42) на этой памяти</text>
+      <line x1="580" y1="46" x2="613" y2="46" stroke="#8FA0C0" stroke-width="1.6" marker-end="url(#arr11)"/>
+      <text x="960" y="50" fill="#3DDC84">→ адрес</text>
+
+      <text x="30" y="132" fill="#FF6B6B">delete p</text>
+      <rect x="250" y="104" width="330" height="44" rx="8" fill="#2A1620" stroke="#FF6B6B" stroke-width="1.5"/>
+      <text x="415" y="126" fill="#E8EDF7" text-anchor="middle" font-family="PT Sans">1. запустить деструктор ~Widget()</text>
+      <text x="415" y="141" fill="#8FA0C0" text-anchor="middle" font-family="PT Sans" font-size="12">освободить ресурсы объекта</text>
+      <rect x="620" y="104" width="300" height="44" rx="8" fill="#2A1620" stroke="#FF6B6B" stroke-width="1.5"/>
+      <text x="770" y="126" fill="#E8EDF7" text-anchor="middle" font-family="PT Sans">2. вернуть байты куче</text>
+      <text x="770" y="141" fill="#8FA0C0" text-anchor="middle" font-family="PT Sans" font-size="12">(operator delete — родня free)</text>
+      <line x1="580" y1="126" x2="613" y2="126" stroke="#8FA0C0" stroke-width="1.6" marker-end="url(#arr11)"/>
+    </g>
+  </svg>

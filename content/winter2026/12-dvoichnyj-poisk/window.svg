@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="572" height="138" viewBox="-26 -26 572 138" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="572" height="138" rx="16" fill="#0E1524"/>
+        <g font-family="Menlo" font-size="12" text-anchor="middle">
+          <rect x="20" y="26" width="480" height="30" fill="#0B111E" stroke="#31405F"/>
+          <rect x="140" y="26" width="200" height="30" fill="#10263A" stroke="#4FC3F7" stroke-width="1.8"/>
+          <text x="240" y="45" fill="#4FC3F7">sum ≤ M</text>
+          <text x="140" y="16" fill="#FF6B6B" font-family="PT Sans">l →</text>
+          <text x="340" y="16" fill="#3DDC84" font-family="PT Sans">r →</text>
+          <text x="260" y="76" fill="#8FA0C0" font-family="PT Sans" font-size="12.5">оба указателя движутся только вправо</text>
+        </g>
+      </svg>

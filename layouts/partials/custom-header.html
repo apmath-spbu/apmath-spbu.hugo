@@ -1,2 +1,3 @@
-{{ if .Param "linkicons" }} {{ partialCached "linkicons.html" . }} {{ end }} 
-{{ if .Param "math" }} {{ partialCached "math.html" . }} {{ end }}
+{{ if .Param "linkicons" }} {{ partialCached "linkicons.html" . }} {{ end }}
+<link href="{{ "css/custom.css" | relURL }}" rel="stylesheet" />
+
