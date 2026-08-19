@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="522" height="222" viewBox="-26 -26 522 222" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="522" height="222" rx="16" fill="#0E1524"/>
+        <g font-family="Menlo" font-size="12.5" text-anchor="middle">
+          <text x="30" y="34" fill="#8FA0C0" font-family="PT Sans" font-size="12.5" text-anchor="start">d: +5 на [1, 4)</text>
+          <rect x="55" y="46" width="52" height="30" fill="#10263A" stroke="#31405F"/><text x="81" y="66" fill="#5C6B8A">0</text>
+          <rect x="107" y="46" width="52" height="30" fill="#14301F" stroke="#3DDC84" stroke-width="1.6"/><text x="133" y="66" fill="#3DDC84">+5</text>
+          <rect x="159" y="46" width="52" height="30" fill="#10263A" stroke="#31405F"/><text x="185" y="66" fill="#5C6B8A">0</text>
+          <rect x="211" y="46" width="52" height="30" fill="#10263A" stroke="#31405F"/><text x="237" y="66" fill="#5C6B8A">0</text>
+          <rect x="263" y="46" width="52" height="30" fill="#2A1620" stroke="#FF6B6B" stroke-width="1.6"/><text x="289" y="66" fill="#FF6B6B">−5</text>
+          <rect x="315" y="46" width="52" height="30" fill="#10263A" stroke="#31405F"/><text x="341" y="66" fill="#5C6B8A">0</text>
+          <text x="30" y="118" fill="#8FA0C0" font-family="PT Sans" font-size="12.5" text-anchor="start">префиксы d:</text>
+          <rect x="55" y="128" width="52" height="30" fill="#10263A" stroke="#31405F"/><text x="81" y="148" fill="#E8EDF7">0</text>
+          <rect x="107" y="128" width="52" height="30" fill="#1E3A54" stroke="#4FC3F7" stroke-width="1.6"/><text x="133" y="148" fill="#4FC3F7">5</text>
+          <rect x="159" y="128" width="52" height="30" fill="#1E3A54" stroke="#4FC3F7" stroke-width="1.6"/><text x="185" y="148" fill="#4FC3F7">5</text>
+          <rect x="211" y="128" width="52" height="30" fill="#1E3A54" stroke="#4FC3F7" stroke-width="1.6"/><text x="237" y="148" fill="#4FC3F7">5</text>
+          <rect x="263" y="128" width="52" height="30" fill="#10263A" stroke="#31405F"/><text x="289" y="148" fill="#E8EDF7">0</text>
+          <rect x="315" y="128" width="52" height="30" fill="#10263A" stroke="#31405F"/><text x="341" y="148" fill="#E8EDF7">0</text>
+        </g>
+      </svg>

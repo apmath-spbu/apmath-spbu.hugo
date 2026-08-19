@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="522" height="320" viewBox="-26 -26 522 320" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="522" height="320" rx="16" fill="#0E1524"/>
+        <g font-family="Menlo" font-size="12.5" text-anchor="middle">
+          <text x="20" y="43" fill="#8FA0C0" font-family="PT Sans" font-size="12" text-anchor="start">k=0</text>
+          <rect x="70" y="26" width="44" height="26" fill="#10263A" stroke="#31405F"/><text x="92" y="44" fill="#E8EDF7">3</text>
+          <rect x="118" y="26" width="44" height="26" fill="#10263A" stroke="#31405F"/><text x="140" y="44" fill="#E8EDF7">1</text>
+          <rect x="166" y="26" width="44" height="26" fill="#10263A" stroke="#31405F"/><text x="188" y="44" fill="#E8EDF7">4</text>
+          <rect x="214" y="26" width="44" height="26" fill="#10263A" stroke="#31405F"/><text x="236" y="44" fill="#E8EDF7">1</text>
+          <rect x="262" y="26" width="44" height="26" fill="#10263A" stroke="#31405F"/><text x="284" y="44" fill="#E8EDF7">5</text>
+          <rect x="310" y="26" width="44" height="26" fill="#10263A" stroke="#31405F"/><text x="332" y="44" fill="#E8EDF7">9</text>
+
+          <text x="20" y="107" fill="#8FA0C0" font-family="PT Sans" font-size="12" text-anchor="start">k=1</text>
+          <rect x="70" y="90" width="92" height="26" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/><text x="116" y="108" fill="#4FC3F7">1</text>
+          <rect x="166" y="90" width="92" height="26" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/><text x="212" y="108" fill="#4FC3F7">1</text>
+          <rect x="262" y="90" width="92" height="26" fill="#10263A" stroke="#4FC3F7" stroke-width="1.5"/><text x="308" y="108" fill="#4FC3F7">5</text>
+          <rect x="118" y="122" width="92" height="26" fill="#0E1E30" stroke="#2C567A" stroke-width="1.3"/><text x="164" y="140" fill="#7FB4D8">1</text>
+          <rect x="214" y="122" width="92" height="26" fill="#0E1E30" stroke="#2C567A" stroke-width="1.3"/><text x="260" y="140" fill="#7FB4D8">1</text>
+
+          <text x="20" y="197" fill="#8FA0C0" font-family="PT Sans" font-size="12" text-anchor="start">k=2</text>
+          <rect x="70" y="180" width="188" height="26" fill="#10263A" stroke="#3DDC84" stroke-width="1.5"/><text x="164" y="198" fill="#3DDC84">1</text>
+          <rect x="166" y="212" width="188" height="26" fill="#0E241A" stroke="#2C6A4C" stroke-width="1.3"/><text x="260" y="230" fill="#7FD8AC">1</text>
+
+          <text x="212" y="260" fill="#8FA0C0" font-family="PT Sans" font-size="12.5">st[k][i] — минимум окна длины 2^k; окна перекрываются</text>
+        </g>
+      </svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="492" height="292" viewBox="-26 -26 492 292" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="492" height="292" rx="16" fill="#0E1524"/>
+        <g font-family="PT Sans" font-size="13" text-anchor="middle">
+          <rect x="40" y="30" width="300" height="170" fill="#0B111E" stroke="#31405F"/>
+          <rect x="40" y="30" width="180" height="100" fill="#10263A" stroke="#4FC3F7" stroke-width="1.6"/>
+          <text x="130" y="85" fill="#4FC3F7" font-family="Menlo" font-size="14">p[i][j]</text>
+          <text x="352" y="46" fill="#8FA0C0" text-anchor="start">вся таблица</text>
+          <line x1="220" y1="30" x2="220" y2="200" stroke="#31405F" stroke-dasharray="4 3"/>
+          <line x1="40" y1="130" x2="340" y2="130" stroke="#31405F" stroke-dasharray="4 3"/>
+          <text x="130" y="222" fill="#8FA0C0">j столбцов</text>
+          <text x="24" y="85" fill="#8FA0C0" transform="rotate(-90 24 85)">i строк</text>
+        </g>
+      </svg>
