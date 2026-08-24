@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="492" height="202" viewBox="-26 -26 492 202" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="492" height="202" rx="16" fill="#0E1524"/>
+        <defs>
+          <marker id="arr22" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 1 L 9 5 L 0 9 z" fill="#8FA0C0"/>
+          </marker>
+        </defs>
+        <g font-family="Menlo" font-size="12" text-anchor="middle">
+          <text x="60" y="22" fill="#8FA0C0" font-family="PT Sans" font-size="12">копия</text>
+          <rect x="20" y="30" width="80" height="26" rx="5" fill="#10263A" stroke="#4FC3F7"/><text x="60" y="47" fill="#E8EDF7">o.data_</text>
+          <rect x="150" y="30" width="90" height="26" rx="5" fill="#1E3A54" stroke="#4FC3F7"/><text x="195" y="47" fill="#E8EDF7">буфер N</text>
+          <line x1="100" y1="43" x2="144" y2="43" stroke="#8FA0C0" stroke-width="1.5" marker-end="url(#arr22)"/>
+          <rect x="20" y="66" width="80" height="26" rx="5" fill="#10263A" stroke="#3DDC84"/><text x="60" y="83" fill="#E8EDF7">data_</text>
+          <rect x="150" y="66" width="90" height="26" rx="5" fill="#14301F" stroke="#3DDC84"/><text x="195" y="83" fill="#3DDC84">НОВЫЙ буфер</text>
+          <line x1="100" y1="79" x2="144" y2="79" stroke="#8FA0C0" stroke-width="1.5" marker-end="url(#arr22)"/>
+          <text x="330" y="22" fill="#8FA0C0" font-family="PT Sans" font-size="12">перемещение</text>
+          <rect x="270" y="30" width="80" height="26" rx="5" fill="#10263A" stroke="#31405F" stroke-dasharray="4 3"/><text x="310" y="47" fill="#5C6B8A">nullptr</text>
+          <rect x="270" y="66" width="80" height="26" rx="5" fill="#10263A" stroke="#3DDC84"/><text x="310" y="83" fill="#E8EDF7">data_</text>
+          <rect x="370" y="48" width="60" height="26" rx="5" fill="#1E3A54" stroke="#FEBC2E" stroke-width="1.6"/><text x="400" y="65" fill="#FEBC2E">буфер</text>
+          <line x1="350" y1="79" x2="364" y2="68" stroke="#FEBC2E" stroke-width="1.6" marker-end="url(#arr22)"/>
+          <text x="225" y="132" fill="#8FA0C0" font-family="PT Sans" font-size="12.5">копия строит второй буфер; move переписывает указатель</text>
+        </g>
+      </svg>
