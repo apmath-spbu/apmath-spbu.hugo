@@ -2,6 +2,8 @@
 linkTitle: "Занятие 22. Move-семантика"
 title: "Занятие 22. Move-семантика"
 date: 2026-08-24T20:00:00+03:00
+publishDate: 2026-11-16T00:00:00+03:00
+description: "lvalue/rvalue, кража ресурсов и std::move, правило пяти, RVO и цена noexcept."
 weight: 220
 draft: false
 ---

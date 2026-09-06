@@ -2,6 +2,8 @@
 linkTitle: "Занятие 23. k-я статистика и сортировки без сравнений"
 title: "Занятие 23. k-я статистика и сортировки без сравнений"
 date: 2026-08-24T21:00:00+03:00
+publishDate: 2026-11-23T00:00:00+03:00
+description: "quickselect, нижняя оценка Ω(n log n) с зазором 1%, counting и radix."
 weight: 230
 draft: false
 ---

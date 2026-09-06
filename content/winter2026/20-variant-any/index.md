@@ -2,6 +2,8 @@
 linkTitle: "Занятие 20. std::variant и std::any"
 title: "Занятие 20. std::variant и std::any"
 date: 2026-08-13T15:00:00+03:00
+publishDate: 2026-11-09T00:00:00+03:00
+description: "tagged union от стандарта, visit и полиморфизм значений, any и карта выбора «или-или»."
 weight: 200
 draft: false
 ---

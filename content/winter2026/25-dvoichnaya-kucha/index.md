@@ -2,6 +2,8 @@
 linkTitle: "Занятие 25. Двоичная куча и heapsort"
 title: "Занятие 25. Двоичная куча и heapsort"
 date: 2026-08-25T12:00:00+03:00
+publishDate: 2026-11-30T00:00:00+03:00
+description: "дерево в массиве, построение за O(n), цена heapsort и топ-k потока."
 weight: 250
 draft: false
 ---

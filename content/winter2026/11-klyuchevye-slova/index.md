@@ -2,6 +2,8 @@
 linkTitle: "Занятие 11. Ключевые слова: волшебные слова C++"
 title: "Занятие 11. Ключевые слова: волшебные слова C++"
 date: 2026-08-10T12:00:00+03:00
+publishDate: 2026-10-12T00:00:00+03:00
+description: "const и семья, три смысла static, this, new/delete, auto, enum class."
 weight: 110
 draft: false
 ---
