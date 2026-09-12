@@ -21,7 +21,7 @@ $$
 
 Числа Фибоначчи растут экспоненциально быстро:
 
->[!lemma] **Лемма**
+>[!lemma] Лемма
 >$2^{\lfloor n / 2\rfloor} \leqslant F_{n} \leqslant 2^{n}$.
 >{{% notice style="prove" expanded="true" %}}
 Докажем утверждение по индукции.
