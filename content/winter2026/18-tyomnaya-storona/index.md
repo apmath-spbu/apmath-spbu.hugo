@@ -1,7 +1,7 @@
 ---
 linkTitle: "Занятие 18. Тёмная сторона: reinterpret_cast, union, UB"
 title: "Занятие 18. Тёмная сторона: reinterpret_cast, union, UB"
-date: 2026-08-12T15:00:00+03:00
+date: 2026-11-02T12:00:00+03:00
 publishDate: 2026-11-02T00:00:00+03:00
 description: "bit_cast и хак Quake, оптимизатор против UB, выравнивание и укладка полей."
 weight: 180

@@ -1,7 +1,7 @@
 ---
 linkTitle: "Занятие 16. std::vector, std::chrono, std::thread"
 title: "Занятие 16. std::vector, std::chrono, std::thread"
-date: 2026-08-11T13:00:00+03:00
+date: 2026-10-26T12:00:00+03:00
 publishDate: 2026-10-26T00:00:00+03:00
 description: "устройство vector и инвалидация, честные замеры, потоки и гонка данных, операторы."
 weight: 160

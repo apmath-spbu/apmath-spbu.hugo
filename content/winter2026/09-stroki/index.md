@@ -1,7 +1,7 @@
 ---
 linkTitle: "Занятие 9. Строки: от C-стиля до modern C++"
 title: "Занятие 9. Строки: от C-стиля до modern C++"
-date: 2026-08-06T15:00:00+03:00
+date: 2026-10-05T12:00:00+03:00
 publishDate: 2026-10-05T00:00:00+03:00
 description: "C-строки, std::string и SSO, string_view, UTF-8 по байтам."
 weight: 90
