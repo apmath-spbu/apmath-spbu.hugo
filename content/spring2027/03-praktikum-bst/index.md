@@ -25,6 +25,11 @@ public:
     BST(const BST&)            = delete;   // копию запрещаем честно
     BST& operator=(const BST&) = delete;
     BST(BST&& o) : root_(o.root_), size_(o.size_) { o.root_ = nullptr; o.size_ = 0; }
+    BST& operator=(BST&& o) {
+        if (this != &o) { clear(root_); root_ = o.root_; size_ = o.size_;
+                          o.root_ = nullptr; o.size_ = 0; }
+        return *this;
+    }
     // операции — ниже
 };
 ```
@@ -127,7 +132,7 @@ bool isBST(Node* t, long long lo, long long hi) {
 bool valid() const { return isBST(root_, LLONG_MIN, LLONG_MAX); }
 ```
 
-Границы — `long long`, чтобы ключи-крайности `INT_MIN`/`INT_MAX` не требовали костылей (занятие 3). Во время отладки erase зовите `valid()` после каждой пачки операций — дёшево и бесценно.
+Границы — `long long`, чтобы ключи-крайности `INT_MIN`/`INT_MAX` не требовали костылей (семестр 1, занятие 3). Во время отладки erase зовите `valid()` после каждой пачки операций — дёшево и бесценно.
 
 **Стресс-тест против std::set** — судья беспристрастный:
 
