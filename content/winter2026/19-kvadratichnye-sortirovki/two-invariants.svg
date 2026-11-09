@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1092" height="314" viewBox="-26 -26 1092 314" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="1092" height="314" rx="16" fill="#0E1524"/>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#FF6B6B"/></marker></defs>
+<g font-family="Menlo" text-anchor="middle">
+<text x="156.0" y="22" fill="#E8EDF7" font-size="15" font-family="PT Sans" text-anchor="middle">вход</text>
+<rect x="20" y="99" width="15" height="121" rx="2" fill="#2A3A55"/>
+<rect x="37" y="88" width="15" height="132" rx="2" fill="#2A3A55"/>
+<rect x="54" y="209" width="15" height="11" rx="2" fill="#2A3A55"/>
+<rect x="71" y="187" width="15" height="33" rx="2" fill="#2A3A55"/>
+<rect x="88" y="110" width="15" height="110" rx="2" fill="#2A3A55"/>
+<rect x="105" y="55" width="15" height="165" rx="2" fill="#2A3A55"/>
+<rect x="122" y="132" width="15" height="88" rx="2" fill="#2A3A55"/>
+<rect x="139" y="165" width="15" height="55" rx="2" fill="#2A3A55"/>
+<rect x="156" y="154" width="15" height="66" rx="2" fill="#2A3A55"/>
+<rect x="173" y="143" width="15" height="77" rx="2" fill="#2A3A55"/>
+<rect x="190" y="176" width="15" height="44" rx="2" fill="#2A3A55"/>
+<rect x="207" y="66" width="15" height="154" rx="2" fill="#2A3A55"/>
+<rect x="224" y="44" width="15" height="176" rx="2" fill="#2A3A55"/>
+<rect x="241" y="121" width="15" height="99" rx="2" fill="#2A3A55"/>
+<rect x="258" y="77" width="15" height="143" rx="2" fill="#2A3A55"/>
+<rect x="275" y="198" width="15" height="22" rx="2" fill="#2A3A55"/>
+<text x="496.0" y="22" fill="#E8EDF7" font-size="15" font-family="PT Sans" text-anchor="middle">выбором, 6 проходов</text>
+<rect x="360" y="209" width="15" height="11" rx="2" fill="#3DDC84"/>
+<rect x="377" y="198" width="15" height="22" rx="2" fill="#3DDC84"/>
+<rect x="394" y="187" width="15" height="33" rx="2" fill="#3DDC84"/>
+<rect x="411" y="176" width="15" height="44" rx="2" fill="#3DDC84"/>
+<rect x="428" y="165" width="15" height="55" rx="2" fill="#3DDC84"/>
+<rect x="445" y="154" width="15" height="66" rx="2" fill="#3DDC84"/>
+<rect x="462" y="132" width="15" height="88" rx="2" fill="#2A3A55"/>
+<rect x="479" y="110" width="15" height="110" rx="2" fill="#2A3A55"/>
+<rect x="496" y="55" width="15" height="165" rx="2" fill="#2A3A55"/>
+<rect x="513" y="143" width="15" height="77" rx="2" fill="#2A3A55"/>
+<rect x="530" y="99" width="15" height="121" rx="2" fill="#2A3A55"/>
+<rect x="547" y="66" width="15" height="154" rx="2" fill="#2A3A55"/>
+<rect x="564" y="44" width="15" height="176" rx="2" fill="#2A3A55"/>
+<rect x="581" y="121" width="15" height="99" rx="2" fill="#2A3A55"/>
+<rect x="598" y="77" width="15" height="143" rx="2" fill="#2A3A55"/>
+<rect x="615" y="88" width="15" height="132" rx="2" fill="#2A3A55"/>
+<line x1="360" y1="232" x2="460" y2="232" stroke="#3DDC84" stroke-width="2.5"/>
+<text x="360" y="252" fill="#3DDC84" font-size="13" font-family="PT Sans" text-anchor="start">наименьшие, навсегда</text>
+<text x="836.0" y="22" fill="#E8EDF7" font-size="15" font-family="PT Sans" text-anchor="middle">вставками, 6 шагов</text>
+<rect x="700" y="209" width="15" height="11" rx="2" fill="#FEBC2E"/>
+<rect x="717" y="187" width="15" height="33" rx="2" fill="#FEBC2E"/>
+<rect x="734" y="132" width="15" height="88" rx="2" fill="#FEBC2E"/>
+<rect x="751" y="110" width="15" height="110" rx="2" fill="#FEBC2E"/>
+<rect x="768" y="99" width="15" height="121" rx="2" fill="#FEBC2E"/>
+<rect x="785" y="88" width="15" height="132" rx="2" fill="#FEBC2E"/>
+<rect x="802" y="55" width="15" height="165" rx="2" fill="#FEBC2E"/>
+<rect x="819" y="165" width="15" height="55" rx="2" fill="#2A3A55"/>
+<rect x="836" y="154" width="15" height="66" rx="2" fill="#2A3A55"/>
+<rect x="853" y="143" width="15" height="77" rx="2" fill="#2A3A55"/>
+<rect x="870" y="176" width="15" height="44" rx="2" fill="#2A3A55"/>
+<rect x="887" y="66" width="15" height="154" rx="2" fill="#2A3A55"/>
+<rect x="904" y="44" width="15" height="176" rx="2" fill="#2A3A55"/>
+<rect x="921" y="121" width="15" height="99" rx="2" fill="#2A3A55"/>
+<rect x="938" y="77" width="15" height="143" rx="2" fill="#2A3A55"/>
+<rect x="955" y="198" width="15" height="22" rx="2" fill="#2A3A55"/>
+<line x1="700" y1="232" x2="817" y2="232" stroke="#FEBC2E" stroke-width="2.5"/>
+<text x="700" y="252" fill="#FEBC2E" font-size="13" font-family="PT Sans" text-anchor="start">отсортирован, но не окончателен</text>
+</g>
+</svg>

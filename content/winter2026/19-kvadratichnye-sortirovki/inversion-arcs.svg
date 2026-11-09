@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="866" height="398" viewBox="-26 -26 866 398" style="max-width:100%;height:auto"><style>text{font-family:'PT Sans','Segoe UI',Verdana,sans-serif}.mono{font-family:Menlo,Consolas,'Courier New',monospace}</style><rect x="-26" y="-26" width="866" height="398" rx="16" fill="#0E1524"/>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#FF6B6B"/></marker></defs>
+<g font-family="Menlo" text-anchor="middle">
+<path d="M78,250 C78,40 598,40 598,250" fill="none" stroke="#FF6B6B" stroke-opacity="0.75" stroke-width="1.7"/>
+<path d="M78,250 C78,76 494,76 494,250" fill="none" stroke="#FF6B6B" stroke-opacity="0.75" stroke-width="1.7"/>
+<path d="M182,250 C182,112 494,112 494,250" fill="none" stroke="#FF6B6B" stroke-opacity="0.75" stroke-width="1.7"/>
+<path d="M286,250 C286,112 598,112 598,250" fill="none" stroke="#FF6B6B" stroke-opacity="0.75" stroke-width="1.7"/>
+<path d="M78,250 C78,148 286,148 286,250" fill="none" stroke="#FF6B6B" stroke-opacity="0.75" stroke-width="1.7"/>
+<path d="M286,250 C286,148 494,148 494,250" fill="none" stroke="#FF6B6B" stroke-opacity="0.75" stroke-width="1.7"/>
+<path d="M390,250 C390,148 598,148 598,250" fill="none" stroke="#FF6B6B" stroke-opacity="0.75" stroke-width="1.7"/>
+<path d="M78,250 C78,184 182,184 182,250" fill="none" stroke="#FF6B6B" stroke-opacity="0.75" stroke-width="1.7"/>
+<path d="M390,250 C390,184 494,184 494,250" fill="none" stroke="#FF6B6B" stroke-opacity="0.75" stroke-width="1.7"/>
+<rect x="40" y="250" width="76" height="58" rx="6" fill="#10263A" stroke="#31405F" stroke-width="1.2"/><text x="78" y="288" fill="#E8EDF7" font-size="24">5</text><text x="78" y="332" fill="#8FA0C0" font-size="14">[0]</text>
+<rect x="144" y="250" width="76" height="58" rx="6" fill="#10263A" stroke="#31405F" stroke-width="1.2"/><text x="182" y="288" fill="#E8EDF7" font-size="24">2</text><text x="182" y="332" fill="#8FA0C0" font-size="14">[1]</text>
+<rect x="248" y="250" width="76" height="58" rx="6" fill="#10263A" stroke="#31405F" stroke-width="1.2"/><text x="286" y="288" fill="#E8EDF7" font-size="24">4</text><text x="286" y="332" fill="#8FA0C0" font-size="14">[2]</text>
+<rect x="352" y="250" width="76" height="58" rx="6" fill="#10263A" stroke="#31405F" stroke-width="1.2"/><text x="390" y="288" fill="#E8EDF7" font-size="24">6</text><text x="390" y="332" fill="#8FA0C0" font-size="14">[3]</text>
+<rect x="456" y="250" width="76" height="58" rx="6" fill="#10263A" stroke="#31405F" stroke-width="1.2"/><text x="494" y="288" fill="#E8EDF7" font-size="24">1</text><text x="494" y="332" fill="#8FA0C0" font-size="14">[4]</text>
+<rect x="560" y="250" width="76" height="58" rx="6" fill="#10263A" stroke="#31405F" stroke-width="1.2"/><text x="598" y="288" fill="#E8EDF7" font-size="24">3</text><text x="598" y="332" fill="#8FA0C0" font-size="14">[5]</text>
+<text x="668" y="288" fill="#FF6B6B" font-size="20" font-family="PT Sans" text-anchor="start">9 инверсий</text>
+</g>
+</svg>
